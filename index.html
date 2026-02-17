@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wu Hanshuo - PhD, Research Associate</title>
+    <link rel="stylesheet" href="css/profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Wu Hanshuo</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="greeting">Hello, I'm</span>
+                    <span class="name">Wu Hanshuo</span>
+                    <span class="title">PhD, Research Associate</span>
+                </h1>
+                <p class="hero-subtitle">Fiber Laser Technology | High-Power Fiber Lasers</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="stat-publications">--</span>
+                        <span class="stat-label">Publications</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="stat-citations">--</span>
+                        <span class="stat-label">Citations</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="stat-reads">--</span>
+                        <span class="stat-label">Paper Reads</span>
+                    </div>
+                </div>
+                <div class="data-status" id="data-status">
+                    <i class="fas fa-sync-alt fa-spin"></i>
+                    <span>Fetching latest data from ResearchGate...</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#publications" class="btn btn-primary">View Publications</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-wrapper">
+                <div class="about-intro">
+                    <div class="intro-badge">
+                        <i class="fas fa-microscope"></i>
+                        <span>Research Associate</span>
+                    </div>
+                    <h3 class="intro-name">Wu Hanshuo, PhD</h3>
+                    <p class="intro-affiliation">National University of Defense Technology</p>
+                    <p class="intro-description">
+                        A dedicated researcher specializing in high-power fiber lasers and fiber amplifiers, 
+                        with extensive expertise in power scaling, transverse mode instability suppression, 
+                        and novel fiber structure design.
+                    </p>
+                </div>
+                
+                <div class="about-details">
+                    <div class="detail-block full-width">
+                        <div class="detail-header">
+                            <i class="fas fa-bullseye"></i>
+                            <h4>Research Focus</h4>
+                        </div>
+                        <p>My research centers on overcoming the fundamental limitations in high-power fiber laser systems. 
+                        I investigate transverse mode instability (TMI) — one of the primary bottlenecks for power scaling — 
+                        and develop innovative solutions to push the boundaries of fiber laser performance.</p>
+                    </div>
+                </div>
+                
+                <div class="about-highlights-new">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="highlight-content">
+                            <span class="highlight-number">8 kW</span>
+                            <span class="highlight-label">Laser Output</span>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="highlight-content">
+                            <span class="highlight-number" id="highlight-pubs">105+</span>
+                            <span class="highlight-label">Publications</span>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="highlight-content">
+                            <span class="highlight-number" id="highlight-citations">1,000+</span>
+                            <span class="highlight-label">Citations</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="research-tags">
+                    <span class="tag-label">Research Areas:</span>
+                    <div class="tags-container">
+                        <span class="research-tag">Fiber Lasers</span>
+                        <span class="research-tag">High-Power Amplifiers</span>
+                        <span class="research-tag">Mode Instability</span>
+                        <span class="research-tag">Confined-Doped Fiber</span>
+                        <span class="research-tag">Tandem Pumping</span>
+                        <span class="research-tag">Beam Quality</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section education-section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Doctor of Philosophy (PhD)</h3>
+                        <p class="institution">Optical Engineering / Fiber Laser Technology</p>
+                        <p class="description">Focused on theoretical and experimental research of high-power fiber lasers, with significant progress in transverse mode instability suppression and fiber structure optimization design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="section research-section">
+        <div class="container">
+            <h2 class="section-title">Research Areas</h2>
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>High-Power Fiber Lasers</h3>
+                    <p>Research on power scaling technologies for kilowatt to multi-kilowatt high-power fiber lasers, including tandem pumping schemes, fiber structure optimization, and thermal management.</p>
+                    <ul class="research-topics">
+                        <li>Bidirectional tandem pumping technology</li>
+                        <li>Confined-doped fiber design</li>
+                        <li>High-brightness laser output</li>
+                    </ul>
+                </div>
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <h3>Transverse Mode Instability</h3>
+                    <p>In-depth investigation of the physical mechanisms of transverse mode instability (TMI) effects, proposing and validating multiple effective TMI mitigation strategies.</p>
+                    <ul class="research-topics">
+                        <li>Static mode degradation effects</li>
+                        <li>Dynamic TMI suppression mechanisms</li>
+                        <li>Low-NA fiber design</li>
+                    </ul>
+                </div>
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Fiber Amplifier Systems</h3>
+                    <p>Development of high-performance fiber amplifier systems with optimized nonlinear effect suppression for high-power, high beam quality output.</p>
+                    <ul class="research-topics">
+                        <li>MOPA structure design</li>
+                        <li>SRS/SBS effect suppression</li>
+                        <li>Narrow-linewidth amplifiers</li>
+                    </ul>
+                </div>
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-random"></i>
+                    </div>
+                    <h3>Random Raman Fiber Lasers</h3>
+                    <p>Research on cavity structure optimization for random distributed feedback Raman fiber lasers to improve Stokes conversion efficiency and output power.</p>
+                    <ul class="research-topics">
+                        <li>Full-open cavity RRFL optimization</li>
+                        <li>High-order Stokes wave suppression</li>
+                        <li>Power scaling techniques</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications" class="section publications-section">
+        <div class="container">
+            <h2 class="section-title">Featured Publications</h2>
+            <div class="publications-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="tmi">Mode Instability</button>
+                <button class="filter-btn" data-filter="amplifier">Amplifiers</button>
+                <button class="filter-btn" data-filter="laser">Lasers</button>
+            </div>
+            <div class="publications-list">
+                <div class="publication-item" data-category="tmi">
+                    <div class="pub-number">01</div>
+                    <div class="pub-content">
+                        <h3>Mitigation of dynamic transverse mode instability in two-mode fiber lasers through static mode degradation</h3>
+                        <p class="pub-journal">Revealed the physical mechanism of static mode degradation suppressing dynamic TMI effects</p>
+                        <div class="pub-tags">
+                            <span class="tag">TMI</span>
+                            <span class="tag">Mode Degradation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-item" data-category="amplifier">
+                    <div class="pub-number">02</div>
+                    <div class="pub-content">
+                        <h3>Confined-doped fiber for high-power operation and transverse mode instability suppression</h3>
+                        <p class="pub-journal">Confined-doped fiber with core/inner-cladding diameter of 40/250 μm and relative doping ratio of 0.75</p>
+                        <div class="pub-tags">
+                            <span class="tag">Confined-Doped Fiber</span>
+                            <span class="tag">Tandem Pumping</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-item" data-category="amplifier">
+                    <div class="pub-number">03</div>
+                    <div class="pub-content">
+                        <h3>High-brightness bidirectional tandem-pumped confined-doped fiber amplifier with nearly 8 kW output power</h3>
+                        <p class="pub-journal">High-brightness bidirectional tandem-pumped confined-doped fiber amplifier with nearly 8 kW output</p>
+                        <div class="pub-tags">
+                            <span class="tag">8kW</span>
+                            <span class="tag">Bidirectional Pumping</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-item" data-category="amplifier">
+                    <div class="pub-number">04</div>
+                    <div class="pub-content">
+                        <h3>High-power narrow-linewidth confined-doped ytterbium fiber amplifier based on side-coupled combiners</h3>
+                        <p class="pub-journal">High-power narrow-linewidth confined-doped ytterbium fiber amplifier based on side-coupled combiners</p>
+                        <div class="pub-tags">
+                            <span class="tag">Narrow-Linewidth</span>
+                            <span class="tag">SRS/SBS Suppression</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-item" data-category="laser">
+                    <div class="pub-number">05</div>
+                    <div class="pub-content">
+                        <h3>High-power bidirectional output all-fiber laser oscillator at 1050 nm with composite cavity architecture</h3>
+                        <p class="pub-journal">1050 nm high-power bidirectional output all-fiber laser oscillator employing composite cavity architecture</p>
+                        <div class="pub-tags">
+                            <span class="tag">Bidirectional Output</span>
+                            <span class="tag">Composite Cavity</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-item" data-category="laser">
+                    <div class="pub-number">06</div>
+                    <div class="pub-content">
+                        <h3>Random Raman fiber lasers with enhanced Stokes conversion efficiency</h3>
+                        <p class="pub-journal">Optimization of Stokes conversion efficiency in random Raman fiber lasers</p>
+                        <div class="pub-tags">
+                            <span class="tag">RRFL</span>
+                            <span class="tag">Raman Laser</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-item" data-category="tmi">
+                    <div class="pub-number">07</div>
+                    <div class="pub-content">
+                        <h3>Low-NA confined-doped fiber architecture for TMI mitigation</h3>
+                        <p class="pub-journal">Low-NA confined-doped fiber architecture synergistically mitigating TMI effects</p>
+                        <div class="pub-tags">
+                            <span class="tag">Low-NA Fiber</span>
+                            <span class="tag">Waveguide Engineering</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-item" data-category="laser">
+                    <div class="pub-number">08</div>
+                    <div class="pub-content">
+                        <h3>Dual-wavelength fiber laser based on cascaded resonant cavity with fiber Bragg gratings</h3>
+                        <p class="pub-journal">Dual-wavelength fiber laser based on cascaded resonant cavity with fiber Bragg gratings</p>
+                        <div class="pub-tags">
+                            <span class="tag">Dual-Wavelength</span>
+                            <span class="tag">FBG</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-item" data-category="tmi">
+                    <div class="pub-number">09</div>
+                    <div class="pub-content">
+                        <h3>Novel TMI mitigation strategy in bidirectional output fiber laser with QCW pump</h3>
+                        <p class="pub-journal">Novel TMI mitigation strategy using quasi-continuous wave pump in bidirectional output fiber laser</p>
+                        <div class="pub-tags">
+                            <span class="tag">QCW Pump</span>
+                            <span class="tag">TMI Suppression</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-item" data-category="laser">
+                    <div class="pub-number">10</div>
+                    <div class="pub-content">
+                        <h3>Kilowatt-level ytterbium-doped fiber laser operating from -50°C to 50°C</h3>
+                        <p class="pub-journal">Kilowatt-level ytterbium-doped fiber laser operating stably over a wide temperature range from -50°C to 50°C</p>
+                        <div class="pub-tags">
+                            <span class="tag">Wide Temperature</span>
+                            <span class="tag">Reliability</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-item" data-category="amplifier">
+                    <div class="pub-number">11</div>
+                    <div class="pub-content">
+                        <h3>Long-tapered Yb³⁺-doped fiber laser directly pumped by long-wavelength LDs</h3>
+                        <p class="pub-journal">Long-tapered Yb³⁺-doped fiber laser directly pumped by long-wavelength laser diodes</p>
+                        <div class="pub-tags">
+                            <span class="tag">MOPA</span>
+                            <span class="tag">Long-Wavelength Pump</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-item" data-category="laser">
+                    <div class="pub-number">12</div>
+                    <div class="pub-content">
+                        <h3>Bidirectional output oscillating-amplifying integrated fiber laser (B-OAIFL)</h3>
+                        <p class="pub-journal">SRS effect optimization in bidirectional output oscillating-amplifying integrated fiber laser</p>
+                        <div class="pub-tags">
+                            <span class="tag">Integrated Design</span>
+                            <span class="tag">SRS Optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="publications-more">
+                <p><strong id="total-publications">--</strong> publications in total. Above are featured works.</p>
+                <a href="https://www.researchgate.net/profile/Wu-Hanshuo" target="_blank" class="btn btn-outline">View All Publications</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <div class="email-protected">
+                                <span class="email-hidden" id="email-display">whs***@163.com</span>
+                                <button class="reveal-email-btn" id="reveal-email-btn" title="Click to verify and reveal email">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <div class="contact-details">
+                            <h3>ResearchGate</h3>
+                            <a href="https://www.researchgate.net/profile/Wu-Hanshuo" target="_blank">Visit Profile</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-university"></i>
+                        <div class="contact-details">
+                            <h3>Research Fields</h3>
+                            <p>Fiber Lasers · High-Power Amplifiers · Mode Instability</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="captcha-modal" id="captcha-modal">
+        <div class="captcha-content">
+            <div class="captcha-header">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Verify to Reveal Email</h4>
+            </div>
+            <p class="captcha-instruction">Please enter the characters shown below:</p>
+            <div class="captcha-display" id="captcha-display"></div>
+            <div class="captcha-input-wrapper">
+                <input type="text" id="captcha-input" placeholder="Enter code" maxlength="6" autocomplete="off">
+                <button class="captcha-refresh" id="captcha-refresh" title="Refresh code">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+            <div class="captcha-actions">
+                <button class="btn btn-secondary" id="captcha-cancel">Cancel</button>
+                <button class="btn btn-primary" id="captcha-verify">Verify</button>
+            </div>
+            <p class="captcha-error" id="captcha-error"></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Wu Hanshuo</h3>
+                    <p>PhD Researcher | Fiber Laser Technology</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://www.researchgate.net/profile/Wu-Hanshuo" target="_blank"><i class="fab fa-researchgate"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wu Hanshuo. All rights reserved. | Data updated dynamically from ResearchGate</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data-fetcher.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
