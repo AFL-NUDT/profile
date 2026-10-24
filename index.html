@@ -553,54 +553,7 @@
     <script>
     (function() {
         'use strict';
-        const CONFIG = {
-            researchGateUrl: 'https://www.researchgate.net/profile/Wu-Hanshuo',
-            corsProxies: ['https://api.allorigins.win/raw?url=', 'https://corsproxy.io/?', 'https://api.codetabs.com/v1/proxy?quest='],
-            cacheKey: 'researchgate_data_cache', cacheExpiry: 24 * 60 * 60 * 1000,
-            fallbackData: { publications: 105, citations: 1041, reads: 16593, lastUpdated: new Date().toISOString() }
-        };
-        const ResearchGateDataFetcher = {
-            async fetchWithProxy(url) {
-                for (const proxy of CONFIG.corsProxies) {
-                    try {
-                        const controller = new AbortController();
-                        const timeoutId = setTimeout(() => controller.abort(), 8000);
-                        const response = await fetch(proxy + encodeURIComponent(url), { headers: { 'Accept': 'text/html,application/xhtml+xml' }, signal: controller.signal });
-                        clearTimeout(timeoutId);
-                        if (response.ok) return await response.text();
-                    } catch (error) { console.warn('ResearchGate proxy unavailable:', error.message); }
-                }
-                throw new Error('All ResearchGate proxies failed');
-            },
-            parseResearchGateData(html) {
-                const data = { publications: 0, citations: 0, reads: 0, lastUpdated: new Date().toISOString() };
-                const publicationMatch = html.match(/Publications\s*\((\d+)\)/i) || html.match(/(\d+)\s*Publications/i);
-                const citationMatch = html.match(/(\d[\d,]*)\s*Citations/i);
-                const readsMatch = html.match(/(\d[\d,]*)\s*Reads/i);
-                if (publicationMatch) data.publications = parseInt(publicationMatch[1], 10);
-                if (citationMatch) data.citations = parseInt(citationMatch[1].replace(/,/g, ''), 10);
-                if (readsMatch) data.reads = parseInt(readsMatch[1].replace(/,/g, ''), 10);
-                return data;
-            },
-            getCachedData() {
-                try {
-                    const data = JSON.parse(localStorage.getItem(CONFIG.cacheKey));
-                    if (data && Date.now() - new Date(data.lastUpdated).getTime() < CONFIG.cacheExpiry) return data;
-                } catch (error) { console.warn('Unable to read metrics cache'); }
-                return null;
-            },
-            setCachedData(data) { try { localStorage.setItem(CONFIG.cacheKey, JSON.stringify(data)); } catch (error) {} },
-            async fetchData(force = false) {
-                if (force) { try { localStorage.removeItem(CONFIG.cacheKey); } catch (error) {} }
-                const cached = this.getCachedData();
-                if (cached) return { ...cached, fromCache: true };
-                try {
-                    const data = this.parseResearchGateData(await this.fetchWithProxy(CONFIG.researchGateUrl));
-                    if (data.publications > 0 || data.citations > 0 || data.reads > 0) { this.setCachedData(data); return { ...data, fromCache: false }; }
-                } catch (error) { console.warn('Using stored ResearchGate metrics'); }
-                return { ...CONFIG.fallbackData, fromCache: false, isFallback: true };
-            }
-        };
+        const PROFILE_DATA_URL = 'data/profile.json';
 
         const navbar = document.querySelector('.navbar');
         const navToggle = document.querySelector('.nav-toggle');
@@ -669,23 +622,66 @@
             }
             requestAnimationFrame(frame);
         }
-        function updateStats(data) {
-            animateNumber(document.getElementById('stat-publications'), data.publications);
-            animateNumber(document.getElementById('stat-citations'), data.citations);
-            animateNumber(document.getElementById('stat-reads'), data.reads);
+        function updateStats(stats) {
+            animateNumber(document.getElementById('stat-publications'), stats.publications);
+            animateNumber(document.getElementById('stat-citations'), stats.citations);
+            animateNumber(document.getElementById('stat-reads'), stats.reads);
             const total = document.getElementById('total-publications');
-            if (total) total.textContent = data.publications.toLocaleString();
-            const status = document.getElementById('data-status');
-            if (data.isFallback) status.innerHTML = '<i class="fas fa-database" aria-hidden="true"></i><span>ResearchGate metrics · cached overview</span>';
-            else if (data.fromCache) status.innerHTML = '<i class="fas fa-check-circle" aria-hidden="true"></i><span>ResearchGate metrics · updated ' + new Date(data.lastUpdated).toLocaleDateString() + ' · <a href="#" id="refresh-data">Refresh</a></span>';
-            else status.innerHTML = '<i class="fas fa-check-circle" aria-hidden="true"></i><span>ResearchGate metrics · updated just now</span>';
-            const refresh = document.getElementById('refresh-data');
-            if (refresh) refresh.addEventListener('click', async event => {
-                event.preventDefault(); status.innerHTML = '<i class="fas fa-rotate fa-spin" aria-hidden="true"></i><span>Refreshing ResearchGate metrics…</span>';
-                updateStats(await ResearchGateDataFetcher.fetchData(true));
-            });
+            if (total) total.textContent = stats.publications.toLocaleString();
         }
-        ResearchGateDataFetcher.fetchData().then(updateStats).catch(() => updateStats({ ...CONFIG.fallbackData, isFallback: true }));
+        function makeElement(tag, className, text) {
+            const element = document.createElement(tag);
+            if (className) element.className = className;
+            if (text !== undefined) element.textContent = text;
+            return element;
+        }
+        function renderPublications(publications) {
+            const list = document.querySelector('.publications-list');
+            const fragment = document.createDocumentFragment();
+            publications.forEach((publication, index) => {
+                if (!publication || typeof publication.title !== 'string' || !publication.title.trim()) return;
+                const item = makeElement('article', 'publication-item');
+                item.dataset.category = ['tmi', 'amplifier', 'laser'].includes(publication.category) ? publication.category : 'research';
+                item.append(makeElement('div', 'pub-number', String(index + 1).padStart(2, '0')));
+                const content = makeElement('div', 'pub-content');
+                content.append(makeElement('h3', '', publication.title));
+                if (publication.description) content.append(makeElement('p', 'pub-journal', publication.description));
+                if (Array.isArray(publication.tags) && publication.tags.length) {
+                    const tags = makeElement('div', 'pub-tags');
+                    publication.tags.slice(0, 4).forEach(tag => tags.append(makeElement('span', 'tag', String(tag))));
+                    content.append(tags);
+                }
+                item.append(content);
+                fragment.append(item);
+            });
+            if (!fragment.childElementCount) return;
+            list.replaceChildren(fragment);
+            const activeFilter = document.querySelector('.filter-btn.active');
+            if (activeFilter) activeFilter.click();
+        }
+        function setDataStatus(updatedAt, isFallback = false) {
+            const status = document.getElementById('data-status');
+            const date = updatedAt && !Number.isNaN(Date.parse(updatedAt))
+                ? new Date(updatedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+                : null;
+            const label = isFallback ? 'Showing last saved ResearchGate data' : date ? 'ResearchGate data · synced ' + date : 'ResearchGate data · saved overview';
+            status.innerHTML = '<i class="fas fa-database" aria-hidden="true"></i><span>' + label + '</span>';
+        }
+        async function loadProfileData() {
+            try {
+                const response = await fetch(PROFILE_DATA_URL, { cache: 'no-store' });
+                if (!response.ok) throw new Error('Profile data unavailable');
+                const data = await response.json();
+                if (!data.stats || !['publications', 'citations', 'reads'].every(key => Number.isFinite(data.stats[key]))) throw new Error('Invalid profile data');
+                updateStats(data.stats);
+                if (Array.isArray(data.publications)) renderPublications(data.publications);
+                setDataStatus(data.updatedAt);
+            } catch (error) {
+                console.warn('Using the publication content embedded in this page');
+                setDataStatus(null, true);
+            }
+        }
+        loadProfileData();
 
         const EmailProtection = {
             realEmail: 'whsopt@163.com', currentCaptcha: '',
