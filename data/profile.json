@@ -1,0 +1,83 @@
+{
+  "source": "https://www.researchgate.net/profile/Wu-Hanshuo",
+  "updatedAt": null,
+  "stats": {
+    "publications": 105,
+    "citations": 1041,
+    "reads": 16593
+  },
+  "publications": [
+    {
+      "title": "Mitigation of dynamic transverse mode instability in two-mode fiber lasers through static mode degradation",
+      "description": "Revealed the physical mechanism of static mode degradation suppressing dynamic TMI effects",
+      "category": "tmi",
+      "tags": ["TMI", "Mode Degradation"]
+    },
+    {
+      "title": "Confined-doped fiber for high-power operation and transverse mode instability suppression",
+      "description": "Confined-doped fiber with core/inner-cladding diameter of 40/250 μm and relative doping ratio of 0.75",
+      "category": "amplifier",
+      "tags": ["Confined-Doped Fiber", "Tandem Pumping"]
+    },
+    {
+      "title": "High-brightness bidirectional tandem-pumped confined-doped fiber amplifier with nearly 8 kW output power",
+      "description": "High-brightness bidirectional tandem-pumped confined-doped fiber amplifier with nearly 8 kW output",
+      "category": "amplifier",
+      "tags": ["8 kW", "Bidirectional Pumping"]
+    },
+    {
+      "title": "High-power narrow-linewidth confined-doped ytterbium fiber amplifier based on side-coupled combiners",
+      "description": "High-power narrow-linewidth confined-doped ytterbium fiber amplifier based on side-coupled combiners",
+      "category": "amplifier",
+      "tags": ["Narrow-Linewidth", "SRS/SBS Suppression"]
+    },
+    {
+      "title": "High-power bidirectional output all-fiber laser oscillator at 1050 nm with composite cavity architecture",
+      "description": "1050 nm high-power bidirectional output all-fiber laser oscillator employing composite cavity architecture",
+      "category": "laser",
+      "tags": ["Bidirectional Output", "Composite Cavity"]
+    },
+    {
+      "title": "Random Raman fiber lasers with enhanced Stokes conversion efficiency",
+      "description": "Optimization of Stokes conversion efficiency in random Raman fiber lasers",
+      "category": "laser",
+      "tags": ["RRFL", "Raman Laser"]
+    },
+    {
+      "title": "Low-NA confined-doped fiber architecture for TMI mitigation",
+      "description": "Low-NA confined-doped fiber architecture synergistically mitigating TMI effects",
+      "category": "tmi",
+      "tags": ["Low-NA Fiber", "Waveguide Engineering"]
+    },
+    {
+      "title": "Dual-wavelength fiber laser based on cascaded resonant cavity with fiber Bragg gratings",
+      "description": "Dual-wavelength fiber laser based on cascaded resonant cavity with fiber Bragg gratings",
+      "category": "laser",
+      "tags": ["Dual-Wavelength", "FBG"]
+    },
+    {
+      "title": "Novel TMI mitigation strategy in bidirectional output fiber laser with QCW pump",
+      "description": "Novel TMI mitigation strategy using quasi-continuous wave pump in bidirectional output fiber laser",
+      "category": "tmi",
+      "tags": ["QCW Pump", "TMI Suppression"]
+    },
+    {
+      "title": "Kilowatt-level ytterbium-doped fiber laser operating from −50°C to 50°C",
+      "description": "Kilowatt-level ytterbium-doped fiber laser operating stably over a wide temperature range from −50°C to 50°C",
+      "category": "laser",
+      "tags": ["Wide Temperature", "Reliability"]
+    },
+    {
+      "title": "Long-tapered Yb³⁺-doped fiber laser directly pumped by long-wavelength LDs",
+      "description": "Long-tapered Yb³⁺-doped fiber laser directly pumped by long-wavelength laser diodes",
+      "category": "amplifier",
+      "tags": ["MOPA", "Long-Wavelength Pump"]
+    },
+    {
+      "title": "Bidirectional output oscillating-amplifying integrated fiber laser (B-OAIFL)",
+      "description": "SRS effect optimization in bidirectional output oscillating-amplifying integrated fiber laser",
+      "category": "laser",
+      "tags": ["Integrated Design", "SRS Optimization"]
+    }
+  ]
+}
