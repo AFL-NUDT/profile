@@ -3,1147 +3,406 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Wu Hanshuo - PhD Research Associate specializing in High-Power Fiber Lasers and Transverse Mode Instability">
-    <meta name="keywords" content="Fiber Laser, High-Power Laser, TMI, Research, PhD">
+    <meta name="description" content="Wu Hanshuo, PhD — Research Associate at NUDT specializing in high-power fiber lasers, fiber amplifiers, and transverse mode instability.">
+    <meta name="keywords" content="Wu Hanshuo, Fiber Laser, High-Power Laser, Transverse Mode Instability, Optical Engineering, NUDT">
     <meta name="author" content="Wu Hanshuo">
-    <title>Wu Hanshuo | PhD Research Associate - Fiber Laser Technology</title>
-    <link rel="canonical" href="https://www.researchgate.net/profile/Wu-Hanshuo">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#f6f8fb">
+    <meta property="og:title" content="Wu Hanshuo | Fiber Laser Researcher">
+    <meta property="og:description" content="Research in high-power fiber lasers, fiber amplifiers, and transverse mode instability.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://afl-nudt.github.io/profile/">
+    <title>Wu Hanshuo | Fiber Laser Researcher</title>
+    <link rel="canonical" href="https://afl-nudt.github.io/profile/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/profile.css">
     <style>
         :root {
-            --primary-color: #2563eb;
-            --primary-dark: #1d4ed8;
-            --primary-light: #3b82f6;
-            --secondary-color: #0f172a;
-            --accent-color: #06b6d4;
-            --accent-green: #10b981;
-            --accent-purple: #8b5cf6;
-            --text-color: #334155;
-            --text-light: #64748b;
-            --bg-light: #f8fafc;
-            --bg-white: #ffffff;
-            --border-color: #e2e8f0;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-            --transition-fast: 0.15s ease;
-            --transition-normal: 0.3s ease;
+            --ink: #10243e;
+            --ink-soft: #354a63;
+            --muted: #65758b;
+            --blue: #175cd3;
+            --blue-dark: #1247a5;
+            --cyan: #0e8fa8;
+            --paper: #ffffff;
+            --canvas: #f6f8fb;
+            --wash: #edf3fa;
+            --line: #dce4ee;
+            --line-dark: rgba(255, 255, 255, .14);
+            --shadow-sm: 0 1px 2px rgba(16, 36, 62, .04), 0 6px 20px rgba(16, 36, 62, .04);
+            --shadow-lg: 0 24px 70px rgba(16, 36, 62, .12);
+            --radius-sm: 12px;
+            --radius: 20px;
+            --radius-lg: 30px;
+            --container: 1160px;
+            --nav-height: 76px;
+            --ease: cubic-bezier(.2, .8, .2, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        *, *::before, *::after { box-sizing: border-box; }
+        * { margin: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 24px); }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--ink-soft);
+            background: var(--paper);
             font-size: 16px;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-white);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        body.menu-open, body.modal-open { overflow: hidden; }
+        a { color: inherit; }
+        button, input { font: inherit; }
+        button, a { -webkit-tap-highlight-color: transparent; }
+        button { color: inherit; }
+        img, svg { display: block; max-width: 100%; }
+        ::selection { color: var(--ink); background: #cce5ff; }
+        :focus-visible { outline: 3px solid rgba(23, 92, 211, .35); outline-offset: 4px; }
+        .skip-link {
+            position: fixed; left: 16px; top: -80px; z-index: 3000;
+            padding: 10px 16px; color: #fff; background: var(--blue); border-radius: 8px;
         }
-
-        .section {
-            padding: 100px 0;
+        .skip-link:focus { top: 16px; }
+        .container { width: min(calc(100% - 48px), var(--container)); margin-inline: auto; }
+        .section { padding: 112px 0; }
+        .section-kicker {
+            display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+            color: var(--blue); font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
         }
-
+        .section-kicker::before { content: ''; width: 28px; height: 1px; background: currentColor; }
+        .section-heading { max-width: 720px; margin-bottom: 48px; }
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 60px;
-            color: var(--secondary-color);
-            position: relative;
+            color: var(--ink); font-family: 'Newsreader', Georgia, serif;
+            font-size: clamp(2.25rem, 4vw, 3.35rem); font-weight: 500; line-height: 1.08; letter-spacing: -.035em;
         }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-            margin: 20px auto 0;
-            border-radius: 2px;
-        }
+        .section-description { max-width: 620px; margin-top: 16px; color: var(--muted); font-size: 1.03rem; }
 
         .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-sm);
-            z-index: 1000;
-            transition: var(--transition-normal);
+            position: fixed; inset: 0 0 auto; z-index: 1000; height: var(--nav-height);
+            background: rgba(246, 248, 251, .84); border-bottom: 1px solid transparent;
+            backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+            transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
         }
-
-        .navbar.scrolled {
-            box-shadow: var(--shadow-md);
+        .navbar.scrolled { background: rgba(255, 255, 255, .92); border-color: var(--line); box-shadow: 0 6px 24px rgba(16, 36, 62, .04); }
+        .nav-container { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .nav-logo { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; font-weight: 700; letter-spacing: -.02em; }
+        .logo-mark {
+            position: relative; width: 30px; height: 30px; border: 1px solid rgba(23, 92, 211, .28); border-radius: 50%;
         }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: var(--transition-fast);
-        }
-
-        .nav-logo:hover {
-            color: var(--primary-dark);
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 8px;
-        }
-
+        .logo-mark::before, .logo-mark::after { content: ''; position: absolute; border-radius: 50%; border: 2px solid var(--blue); }
+        .logo-mark::before { inset: 6px; border-left-color: transparent; transform: rotate(-35deg); }
+        .logo-mark::after { width: 4px; height: 4px; inset: 50% auto auto 50%; background: var(--cyan); border: 0; transform: translate(-50%, -50%); }
+        .nav-menu { display: flex; align-items: center; gap: 4px; padding: 0; list-style: none; }
         .nav-link {
-            padding: 8px 16px;
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            border-radius: 8px;
-            transition: var(--transition-fast);
+            position: relative; display: block; padding: 9px 13px; color: var(--muted);
+            font-size: .88rem; font-weight: 600; text-decoration: none; border-radius: 9px;
+            transition: color .2s ease, background .2s ease;
         }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary-color);
-            background: rgba(37, 99, 235, 0.1);
+        .nav-link:hover { color: var(--ink); background: rgba(23, 92, 211, .06); }
+        .nav-link.active { color: var(--blue); }
+        .nav-link.active::after {
+            content: ''; position: absolute; left: 13px; right: 13px; bottom: 3px; height: 2px;
+            background: var(--blue); border-radius: 2px;
         }
-
         .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
+            display: none; width: 44px; height: 44px; padding: 0; border: 1px solid var(--line);
+            background: rgba(255, 255, 255, .7); border-radius: 12px; cursor: pointer;
         }
-
-        .hamburger {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--text-color);
-            position: relative;
-            transition: var(--transition-fast);
+        .hamburger, .hamburger::before, .hamburger::after {
+            display: block; width: 20px; height: 2px; margin: auto; background: var(--ink); border-radius: 2px;
+            transition: transform .2s ease, opacity .2s ease;
         }
-
-        .hamburger::before,
-        .hamburger::after {
-            content: '';
-            position: absolute;
-            width: 24px;
-            height: 2px;
-            background: var(--text-color);
-            left: 0;
-            transition: var(--transition-fast);
-        }
-
-        .hamburger::before {
-            top: -8px;
-        }
-
-        .hamburger::after {
-            top: 8px;
-        }
+        .hamburger { position: relative; }
+        .hamburger::before, .hamburger::after { content: ''; position: absolute; left: 0; }
+        .hamburger::before { top: -6px; }
+        .hamburger::after { top: 6px; }
+        .nav-toggle.active .hamburger { background: transparent; }
+        .nav-toggle.active .hamburger::before { top: 0; transform: rotate(45deg); }
+        .nav-toggle.active .hamburger::after { top: 0; transform: rotate(-45deg); }
 
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 50%, #f0f9ff 100%);
-            position: relative;
-            padding-top: 70px;
-            overflow: hidden;
+            position: relative; min-height: 760px; padding: calc(var(--nav-height) + 74px) 0 78px;
+            display: flex; align-items: center; overflow: hidden; background: var(--canvas);
         }
-
         .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
-            pointer-events: none;
+            content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .38;
+            background-image: linear-gradient(rgba(16, 36, 62, .045) 1px, transparent 1px), linear-gradient(90deg, rgba(16, 36, 62, .045) 1px, transparent 1px);
+            background-size: 56px 56px;
+            mask-image: linear-gradient(to right, #000, transparent 78%);
         }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
-            text-align: center;
+        .hero::after {
+            content: ''; position: absolute; width: 680px; height: 680px; right: -160px; top: -140px;
+            border-radius: 50%; background: radial-gradient(circle, rgba(47, 157, 218, .14), rgba(23, 92, 211, .035) 45%, transparent 70%); pointer-events: none;
         }
-
-        .hero-text {
-            animation: fadeInUp 0.8s ease;
+        .hero-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 1.12fr .88fr; gap: 64px; align-items: center; }
+        .hero-eyebrow {
+            display: inline-flex; align-items: center; gap: 9px; margin-bottom: 25px; padding: 7px 12px;
+            color: var(--blue); background: rgba(23, 92, 211, .07); border: 1px solid rgba(23, 92, 211, .12);
+            border-radius: 999px; font-size: .76rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
         }
-
-        .hero-title {
-            margin-bottom: 24px;
-        }
-
-        .hero-title .greeting {
-            display: block;
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: var(--text-light);
-            margin-bottom: 8px;
-        }
-
-        .hero-title .name {
-            display: block;
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            line-height: 1.2;
-            margin-bottom: 8px;
-        }
-
-        .hero-title .title {
-            display: block;
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: var(--primary-color);
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-light);
-            margin-bottom: 40px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
+        .hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; box-shadow: 0 0 0 4px rgba(14, 143, 168, .1); }
+        .hero-title { color: var(--ink); font-family: 'Newsreader', Georgia, serif; font-size: clamp(4rem, 7vw, 6.1rem); font-weight: 500; line-height: .93; letter-spacing: -.055em; }
+        .hero-title span { display: block; color: var(--blue); font-style: italic; }
+        .hero-role { margin-top: 24px; color: var(--ink); font-size: 1.05rem; font-weight: 600; }
+        .hero-role span { color: var(--muted); font-weight: 400; }
+        .hero-subtitle { max-width: 590px; margin-top: 14px; color: var(--muted); font-size: 1.06rem; line-height: 1.75; }
+        .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 32px;
-            font-size: 1rem;
-            font-weight: 500;
-            text-decoration: none;
-            border-radius: 12px;
-            transition: var(--transition-normal);
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            color: white;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
-        }
-
-        .btn-secondary {
-            background: var(--bg-white);
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-
-        .scroll-indicator i {
-            font-size: 24px;
-            color: var(--text-light);
-        }
-
-        .about-section {
-            background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-light) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border-color), transparent);
-        }
-
-        .about-wrapper {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .about-intro {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 30px;
-            background: var(--bg-white);
-            border-radius: 24px;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-        }
-
-        .intro-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 20px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(6, 182, 212, 0.1));
-            border-radius: 30px;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--primary-color);
-        }
-
-        .intro-badge i {
-            font-size: 1rem;
-        }
-
-        .intro-name {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
-        }
-
-        .intro-affiliation {
-            font-size: 1.1rem;
-            color: var(--primary-color);
-            font-weight: 500;
-            margin-bottom: 16px;
-        }
-
-        .intro-description {
-            font-size: 1.05rem;
-            color: var(--text-color);
-            line-height: 1.8;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .research-tags {
-            background: var(--bg-white);
-            padding: 32px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-md);
-        }
-
-        .tag-label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-light);
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .tags-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .research-tag {
-            padding: 10px 20px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(6, 182, 212, 0.08));
-            color: var(--primary-color);
-            border-radius: 30px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: var(--transition-fast);
-            border: 1px solid rgba(37, 99, 235, 0.15);
-        }
-
-        .research-tag:hover {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: white;
-            transform: translateY(-2px);
-            border-color: transparent;
-        }
-
-        .education-section {
-            background: var(--bg-light);
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            padding-left: 40px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-            padding-left: 40px;
-        }
-
-        .timeline-marker {
-            position: absolute;
-            left: -49px;
-            top: 0;
-            width: 16px;
-            height: 16px;
-            background: var(--primary-color);
-            border-radius: 50%;
-            border: 4px solid var(--bg-light);
-            box-shadow: 0 0 0 4px var(--primary-color);
-        }
-
-        .timeline-content {
-            background: var(--bg-white);
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-md);
-        }
-
-        .timeline-content h3 {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 8px;
-        }
-
-        .timeline-content .institution {
-            font-size: 1.1rem;
-            color: var(--primary-color);
-            font-weight: 500;
-            margin-bottom: 12px;
-        }
-
-        .timeline-content .description {
-            color: var(--text-color);
-            line-height: 1.7;
-        }
-
-        .research-section {
-            background: var(--bg-white);
-        }
-
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-
-        .research-card {
-            background: var(--bg-light);
-            padding: 40px;
-            border-radius: 20px;
-            transition: var(--transition-normal);
-            border: 1px solid transparent;
-        }
-
-        .research-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--primary-color);
-            background: var(--bg-white);
-        }
-
-        .research-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-        }
-
-        .research-icon i {
-            font-size: 28px;
-            color: white;
-        }
-
-        .research-card h3 {
-            font-size: 1.4rem;
-            color: var(--secondary-color);
-            margin-bottom: 16px;
-        }
-
-        .research-card > p {
-            color: var(--text-color);
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-
-        .research-topics {
-            list-style: none;
-        }
-
-        .research-topics li {
-            padding: 8px 0;
-            color: var(--text-light);
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .research-topics li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-        }
-
-        .publications-section {
-            background: var(--bg-light);
-        }
-
-        .publications-filter {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 10px 24px;
-            background: var(--bg-white);
-            border: 2px solid var(--border-color);
-            border-radius: 30px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-color);
-            cursor: pointer;
-            transition: var(--transition-fast);
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-            color: white;
-        }
-
-        .publications-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .publication-item {
-            display: flex;
-            gap: 24px;
-            background: var(--bg-white);
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition-normal);
-            border-left: 4px solid transparent;
-        }
-
-        .publication-item:hover {
-            transform: translateX(8px);
-            box-shadow: var(--shadow-lg);
-            border-left-color: var(--primary-color);
-        }
-
-        .publication-item.hidden {
-            display: none;
-        }
-
-        .pub-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--border-color);
-            min-width: 50px;
-        }
-
-        .pub-content {
-            flex: 1;
-        }
-
-        .pub-content h3 {
-            font-size: 1.15rem;
-            color: var(--secondary-color);
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-
-        .pub-journal {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 12px;
-        }
-
-        .pub-tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            padding: 4px 12px;
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--primary-color);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .publications-more {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .publications-more p {
-            color: var(--text-light);
-            margin-bottom: 20px;
-        }
-
-        .contact-section {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #1e3a5f 100%);
-            color: white;
-            padding: 60px 0;
-        }
-
-        .contact-section .section-title {
-            color: white;
-            margin-bottom: 40px;
-        }
-
-        .contact-section .section-title::after {
-            background: linear-gradient(90deg, var(--accent-color), var(--primary-light));
-        }
-
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .contact-item {
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-        }
-
-        .contact-item i {
-            font-size: 1.25rem;
-            color: var(--accent-color);
-            width: 44px;
-            height: 44px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .contact-details h3 {
-            font-size: 1rem;
-            margin-bottom: 4px;
-        }
-
-        .contact-details p,
-        .contact-details a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: var(--transition-fast);
-        }
-
-        .contact-details a:hover {
-            color: var(--accent-color);
-        }
-
-        .email-protected {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .email-hidden {
-            font-family: 'Courier New', monospace;
-            letter-spacing: 0.5px;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .email-revealed {
-            color: var(--accent-color);
-            font-weight: 500;
-        }
-
-        .reveal-email-btn {
-            background: rgba(6, 182, 212, 0.2);
-            border: 1px solid rgba(6, 182, 212, 0.3);
-            color: var(--accent-color);
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: var(--transition-fast);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .reveal-email-btn:hover {
-            background: rgba(6, 182, 212, 0.3);
-            transform: scale(1.05);
-        }
-
-        .captcha-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            padding: 20px;
-        }
-
-        .captcha-modal.active {
-            display: flex;
-        }
-
-        .captcha-content {
-            background: white;
-            border-radius: 20px;
-            padding: 32px;
-            max-width: 380px;
-            width: 100%;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: captchaSlideIn 0.3s ease;
-        }
-
-        @keyframes captchaSlideIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9) translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-
-        .captcha-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .captcha-header i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        .captcha-header h4 {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            font-weight: 600;
-        }
-
-        .captcha-instruction {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 16px;
-        }
-
-        .captcha-display {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 16px 24px;
-            text-align: center;
-            margin-bottom: 16px;
-            font-family: 'Courier New', monospace;
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 8px;
-            color: var(--secondary-color);
-            user-select: none;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .captcha-display::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(0, 0, 0, 0.02) 10px,
-                rgba(0, 0, 0, 0.02) 20px
-            );
-            pointer-events: none;
-        }
-
-        .captcha-input-wrapper {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .captcha-input-wrapper input {
-            flex: 1;
-            padding: 12px 16px;
-            border: 2px solid var(--border-color);
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            transition: var(--transition-fast);
-        }
-
-        .captcha-input-wrapper input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-
-        .captcha-refresh {
-            width: 48px;
-            height: 48px;
-            background: var(--bg-light);
-            border: 2px solid var(--border-color);
-            border-radius: 10px;
-            cursor: pointer;
-            transition: var(--transition-fast);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-light);
-        }
-
-        .captcha-refresh:hover {
-            background: var(--border-color);
-            color: var(--primary-color);
-        }
-
-        .captcha-refresh.spinning i {
-            animation: spin 0.5s ease;
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .captcha-actions {
-            display: flex;
-            gap: 12px;
-        }
-
-        .captcha-actions .btn {
-            flex: 1;
-            padding: 12px 20px;
-        }
-
-        .captcha-error {
-            color: #ef4444;
-            font-size: 0.9rem;
-            margin-top: 12px;
-            text-align: center;
-            min-height: 20px;
-        }
-
-        .footer {
-            background: var(--secondary-color);
-            color: white;
-            padding: 60px 0 30px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 30px;
-        }
-
-        .footer-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-        }
-
-        .footer-info p {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 16px;
-        }
-
-        .footer-links a {
-            width: 44px;
-            height: 44px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.25rem;
-            transition: var(--transition-fast);
-        }
-
-        .footer-links a:hover {
-            background: var(--primary-color);
-            transform: translateY(-4px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-10px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-5px);
-            }
-        }
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 12px 21px;
+            border: 1px solid transparent; border-radius: 11px; font-size: .9rem; font-weight: 700; line-height: 1.2;
+            text-decoration: none; cursor: pointer; transition: transform .2s var(--ease), box-shadow .2s ease, background .2s ease, border-color .2s ease;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-primary { color: #fff; background: var(--blue); box-shadow: 0 9px 22px rgba(23, 92, 211, .2); }
+        .btn-primary:hover { background: var(--blue-dark); box-shadow: 0 12px 28px rgba(23, 92, 211, .27); }
+        .btn-secondary { color: var(--ink); background: rgba(255, 255, 255, .72); border-color: var(--line); }
+        .btn-secondary:hover { background: #fff; border-color: #b7c7da; }
+        .btn-outline { color: var(--blue); background: transparent; border-color: rgba(23, 92, 211, .28); }
+        .btn-outline:hover { background: rgba(23, 92, 211, .05); border-color: var(--blue); }
+        .hero-stats { display: flex; align-items: stretch; margin-top: 44px; }
+        .stat-item { min-width: 116px; padding: 0 26px; border-left: 1px solid var(--line); }
+        .stat-item:first-child { padding-left: 0; border-left: 0; }
+        .stat-number { display: block; color: var(--ink); font-family: 'Newsreader', Georgia, serif; font-size: 2rem; font-weight: 600; line-height: 1; letter-spacing: -.03em; }
+        .stat-label { display: block; margin-top: 7px; color: var(--muted); font-size: .73rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+        .data-status { display: flex; align-items: center; gap: 7px; min-height: 24px; margin-top: 16px; color: var(--muted); font-size: .73rem; }
+        .data-status i { color: var(--cyan); font-size: .66rem; }
+        .data-status a { color: var(--blue); font-weight: 600; text-decoration: none; }
+        .data-status a:hover { text-decoration: underline; }
+
+        .hero-visual { position: relative; min-height: 500px; display: grid; place-items: center; }
+        .visual-card {
+            position: relative; width: min(100%, 420px); aspect-ratio: .84; padding: 28px;
+            overflow: hidden; color: #fff; background: #102a46; border: 1px solid rgba(255,255,255,.1);
+            border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); isolation: isolate;
+        }
+        .visual-card::before {
+            content: ''; position: absolute; inset: 0; z-index: -1;
+            background: radial-gradient(circle at 78% 18%, rgba(54, 211, 238, .22), transparent 37%), linear-gradient(145deg, transparent 45%, rgba(23, 92, 211, .3));
+        }
+        .visual-top { display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,.62); font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+        .visual-top i { color: #61d9e8; font-size: .9rem; }
+        .fiber-graphic { width: 100%; margin: 18px 0 4px; overflow: visible; }
+        .fiber-graphic .orbit { transform-origin: 180px 155px; animation: orbit 24s linear infinite; }
+        .fiber-graphic .pulse { stroke-dasharray: 8 12; animation: pulse 8s linear infinite; }
+        .visual-caption { position: relative; margin-top: -4px; }
+        .visual-caption small { display: block; color: #7fd6e2; font-size: .68rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+        .visual-caption h2 { margin-top: 8px; font-family: 'Newsreader', Georgia, serif; font-size: 2rem; font-weight: 500; line-height: 1.08; letter-spacing: -.025em; }
+        .visual-caption p { margin-top: 12px; color: rgba(255,255,255,.63); font-size: .82rem; line-height: 1.6; }
+        .visual-note {
+            position: absolute; right: -16px; bottom: 48px; display: flex; align-items: center; gap: 12px;
+            padding: 14px 17px; color: var(--ink); background: rgba(255,255,255,.94); border: 1px solid rgba(255,255,255,.8);
+            border-radius: 14px; box-shadow: 0 14px 36px rgba(16, 36, 62, .15); backdrop-filter: blur(10px);
+        }
+        .visual-note i { display: grid; place-items: center; width: 34px; height: 34px; color: var(--blue); background: var(--wash); border-radius: 9px; }
+        .visual-note strong { display: block; font-size: .78rem; }
+        .visual-note span { display: block; color: var(--muted); font-size: .68rem; }
+        @keyframes orbit { to { transform: rotate(360deg); } }
+        @keyframes pulse { to { stroke-dashoffset: -200; } }
+
+        .about-section { background: var(--paper); }
+        .about-layout { display: grid; grid-template-columns: 1.35fr .65fr; gap: 80px; align-items: start; }
+        .about-intro .intro-name { color: var(--ink); font-size: 1.25rem; font-weight: 700; }
+        .about-intro .intro-affiliation { margin-top: 3px; color: var(--blue); font-size: .9rem; font-weight: 600; }
+        .intro-description { margin-top: 25px; color: var(--ink-soft); font-size: 1.07rem; line-height: 1.9; }
+        .intro-description + .intro-description { margin-top: 16px; }
+        .research-tags { padding: 28px; background: var(--canvas); border: 1px solid var(--line); border-radius: var(--radius); }
+        .tag-label { display: block; margin-bottom: 18px; color: var(--ink); font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+        .tags-container { display: flex; flex-wrap: wrap; gap: 9px; }
+        .research-tag { padding: 7px 11px; color: var(--ink-soft); background: #fff; border: 1px solid var(--line); border-radius: 8px; font-size: .78rem; font-weight: 500; }
+
+        .education-section { background: var(--canvas); border-block: 1px solid #edf1f6; }
+        .timeline { max-width: 900px; }
+        .timeline-item { position: relative; display: grid; grid-template-columns: 150px 1fr; gap: 40px; padding: 0 0 42px 32px; }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-item::before { content: ''; position: absolute; left: 5px; top: 9px; bottom: -9px; width: 1px; background: #cbd8e6; }
+        .timeline-item:last-child::before { display: none; }
+        .timeline-marker { position: absolute; left: 0; top: 6px; width: 11px; height: 11px; background: var(--canvas); border: 3px solid var(--blue); border-radius: 50%; box-shadow: 0 0 0 5px var(--canvas); }
+        .timeline-date { color: var(--blue); font-size: .82rem; font-weight: 700; letter-spacing: .06em; }
+        .timeline-content h3 { color: var(--ink); font-size: 1.18rem; line-height: 1.45; }
+        .timeline-content .institution { margin-top: 4px; color: var(--muted); font-size: .9rem; }
+        .timeline-content .description { margin-top: 12px; color: var(--ink-soft); font-size: .93rem; line-height: 1.75; }
+
+        .research-section { background: var(--paper); }
+        .research-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+        .research-card { position: relative; padding: 38px; background: #fff; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .25s ease, transform .25s var(--ease), box-shadow .25s ease; }
+        .research-card:hover { z-index: 1; background: var(--canvas); transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+        .research-card-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+        .research-icon { display: grid; place-items: center; width: 46px; height: 46px; color: var(--blue); background: var(--wash); border-radius: 12px; }
+        .research-icon i { font-size: 1.05rem; }
+        .research-index { color: #a4b2c3; font-family: 'Newsreader', Georgia, serif; font-size: 1.25rem; }
+        .research-card h3 { margin-top: 24px; color: var(--ink); font-size: 1.25rem; line-height: 1.35; letter-spacing: -.015em; }
+        .research-card > p { margin-top: 12px; color: var(--muted); font-size: .92rem; line-height: 1.75; }
+        .research-topics { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 20px; padding: 0; list-style: none; }
+        .research-topics li { display: flex; align-items: center; gap: 7px; color: var(--ink-soft); font-size: .78rem; }
+        .research-topics li::before { content: ''; width: 4px; height: 4px; background: var(--cyan); border-radius: 50%; }
+
+        .publications-section { color: #fff; background: #0e233c; }
+        .publications-section .section-kicker { color: #74c9d8; }
+        .publications-section .section-title { color: #fff; }
+        .publications-section .section-description { color: rgba(255,255,255,.58); }
+        .publications-top { display: flex; justify-content: space-between; align-items: end; gap: 32px; }
+        .publications-filter { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 30px; }
+        .filter-btn { padding: 8px 13px; color: rgba(255,255,255,.62); background: transparent; border: 1px solid var(--line-dark); border-radius: 999px; font-size: .76rem; font-weight: 600; cursor: pointer; transition: color .2s ease, background .2s ease, border-color .2s ease; }
+        .filter-btn:hover { color: #fff; border-color: rgba(255,255,255,.35); }
+        .filter-btn.active { color: #0e233c; background: #fff; border-color: #fff; }
+        .publications-list { border-top: 1px solid var(--line-dark); }
+        .publication-item { display: grid; grid-template-columns: 54px 1fr; gap: 20px; padding: 25px 8px; border-bottom: 1px solid var(--line-dark); transition: background .2s ease, padding .2s ease; }
+        .publication-item:hover { padding-inline: 16px; background: rgba(255,255,255,.035); }
+        .publication-item.hidden { display: none; }
+        .pub-number { padding-top: 3px; color: #6f8aa8; font-family: 'Newsreader', Georgia, serif; font-size: 1.15rem; }
+        .pub-content h3 { max-width: 900px; color: #f3f7fc; font-size: 1.03rem; font-weight: 500; line-height: 1.55; }
+        .pub-journal { margin-top: 6px; color: rgba(255,255,255,.48); font-size: .8rem; line-height: 1.6; }
+        .pub-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 11px; }
+        .tag { padding: 3px 8px; color: #9edce5; background: rgba(70, 184, 201, .08); border: 1px solid rgba(116, 201, 216, .16); border-radius: 5px; font-size: .66rem; font-weight: 600; }
+        .publications-more { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 34px; }
+        .publications-more p { color: rgba(255,255,255,.55); font-size: .82rem; }
+        .publications-more strong { color: #fff; }
+        .publications-more .btn-outline { flex-shrink: 0; color: #fff; border-color: rgba(255,255,255,.25); }
+        .publications-more .btn-outline:hover { background: rgba(255,255,255,.08); border-color: #fff; }
+
+        .contact-section { padding: 100px 0; background: #eef4f9; }
+        .contact-panel { position: relative; display: grid; grid-template-columns: .85fr 1.15fr; gap: 64px; padding: 56px; overflow: hidden; color: #fff; background: var(--blue); border-radius: var(--radius-lg); }
+        .contact-panel::after { content: ''; position: absolute; width: 400px; height: 400px; left: -180px; bottom: -250px; border: 1px solid rgba(255,255,255,.15); border-radius: 50%; box-shadow: 0 0 0 50px rgba(255,255,255,.035), 0 0 0 100px rgba(255,255,255,.025); pointer-events: none; }
+        .contact-heading { position: relative; z-index: 1; }
+        .contact-heading .section-kicker { color: #bceaf1; }
+        .contact-heading .section-title { color: #fff; font-size: clamp(2.2rem, 4vw, 3.1rem); }
+        .contact-heading p { margin-top: 18px; color: rgba(255,255,255,.72); font-size: .92rem; }
+        .contact-info { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+        .contact-item { display: flex; flex-direction: column; gap: 18px; min-width: 0; padding: 22px; background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.14); border-radius: 15px; }
+        .contact-item > i { color: #bceaf1; font-size: 1rem; }
+        .contact-details { min-width: 0; }
+        .contact-details h3 { color: rgba(255,255,255,.58); font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+        .contact-details p, .contact-details a, .email-hidden { display: block; margin-top: 5px; color: #fff; font-size: .82rem; line-height: 1.55; text-decoration: none; overflow-wrap: anywhere; }
+        .contact-details a:hover { text-decoration: underline; }
+        .email-protected { display: flex; align-items: center; gap: 8px; }
+        .email-revealed { color: #fff !important; font-weight: 600; }
+        .reveal-email-btn { flex: 0 0 30px; width: 30px; height: 30px; margin-top: 4px; color: #fff; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22); border-radius: 8px; cursor: pointer; }
+        .reveal-email-btn:hover { background: rgba(255,255,255,.22); }
+
+        .captcha-modal { position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(5, 18, 33, .7); backdrop-filter: blur(7px); }
+        .captcha-modal.active { display: flex; }
+        .captcha-content { width: min(100%, 390px); padding: 30px; color: var(--ink-soft); background: #fff; border-radius: 22px; box-shadow: 0 28px 90px rgba(0,0,0,.28); animation: modalIn .25s var(--ease); }
+        .captcha-header { display: flex; align-items: center; gap: 12px; }
+        .captcha-header i { color: var(--blue); font-size: 1.25rem; }
+        .captcha-header h4 { color: var(--ink); font-size: 1.08rem; }
+        .captcha-instruction { margin-top: 12px; color: var(--muted); font-size: .85rem; }
+        .captcha-display { margin-top: 18px; padding: 15px; color: var(--ink); background: var(--wash); border: 1px dashed #b6c8dc; border-radius: 10px; font-family: monospace; font-size: 1.55rem; font-weight: 700; letter-spacing: 8px; text-align: center; user-select: none; }
+        .captcha-input-wrapper { display: flex; gap: 9px; margin-top: 14px; }
+        .captcha-input-wrapper input { min-width: 0; flex: 1; padding: 11px 14px; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 9px; letter-spacing: 3px; text-transform: uppercase; }
+        .captcha-input-wrapper input:focus { border-color: var(--blue); outline: 3px solid rgba(23,92,211,.1); }
+        .captcha-refresh { width: 47px; color: var(--muted); background: var(--canvas); border: 1px solid var(--line); border-radius: 9px; cursor: pointer; }
+        .captcha-refresh.spinning i { animation: spin .5s ease; }
+        .captcha-actions { display: flex; gap: 10px; margin-top: 18px; }
+        .captcha-actions .btn { flex: 1; }
+        .captcha-error { min-height: 20px; margin-top: 10px; color: #c43232; font-size: .78rem; text-align: center; }
+        @keyframes modalIn { from { opacity: 0; transform: translateY(12px) scale(.98); } }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .footer { padding: 32px 0; color: var(--muted); background: #fff; border-top: 1px solid var(--line); }
+        .footer-content { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .footer-info { color: var(--ink); font-size: .85rem; font-weight: 700; }
+        .footer-bottom { font-size: .75rem; }
+        .footer-links { display: flex; gap: 10px; }
+        .footer-links a { display: grid; place-items: center; width: 38px; height: 38px; color: var(--blue); background: var(--wash); border-radius: 10px; transition: color .2s ease, background .2s ease; }
+        .footer-links a:hover { color: #fff; background: var(--blue); }
+        .back-to-top { position: fixed; right: 24px; bottom: 24px; z-index: 900; display: grid; place-items: center; width: 44px; height: 44px; color: #fff; background: var(--ink); border: 0; border-radius: 12px; box-shadow: var(--shadow-sm); cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity .2s ease, visibility .2s ease, transform .2s ease; }
+        .back-to-top.visible { opacity: 1; visibility: visible; transform: none; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity .65s var(--ease), transform .65s var(--ease); }
+        .reveal.is-visible { opacity: 1; transform: none; }
 
         @media (max-width: 1024px) {
-            .hero-stats {
-                justify-content: center;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .research-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero-layout { gap: 38px; }
+            .hero-title { font-size: clamp(3.8rem, 7.5vw, 5rem); }
+            .hero-visual { min-height: 450px; }
+            .visual-note { right: -4px; }
+            .about-layout { gap: 44px; }
+            .contact-panel { gap: 36px; padding: 42px; }
+            .contact-info { grid-template-columns: 1fr; }
         }
-
-        @media (max-width: 768px) {
+        @media (max-width: 820px) {
+            :root { --nav-height: 68px; }
+            .container { width: min(calc(100% - 36px), var(--container)); }
+            .section { padding: 82px 0; }
+            .nav-toggle { display: block; }
             .nav-menu {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 20px;
-                gap: 0;
-                box-shadow: var(--shadow-lg);
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: var(--transition-normal);
+                position: fixed; top: var(--nav-height); left: 18px; right: 18px; display: flex; flex-direction: column; align-items: stretch; gap: 2px;
+                padding: 10px; background: rgba(255,255,255,.98); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-lg);
+                opacity: 0; visibility: hidden; transform: translateY(-10px); transition: opacity .2s ease, visibility .2s ease, transform .2s ease;
             }
-
-            .nav-menu.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .nav-link {
-                display: block;
-                padding: 12px 16px;
-                border-bottom: 1px solid var(--border-color);
-            }
-
-            .nav-toggle {
-                display: block;
-            }
-
-            .nav-toggle.active .hamburger {
-                background: transparent;
-            }
-
-            .nav-toggle.active .hamburger::before {
-                top: 0;
-                transform: rotate(45deg);
-            }
-
-            .nav-toggle.active .hamburger::after {
-                top: 0;
-                transform: rotate(-45deg);
-            }
-
-            .hero-title .name {
-                font-size: 2.5rem;
-            }
-
-            .about-intro {
-                padding: 30px 20px;
-            }
-
-            .intro-name {
-                font-size: 1.6rem;
-            }
-
-            .research-tags {
-                padding: 24px;
-            }
-
-            .tags-container {
-                justify-content: center;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .section-title {
-                font-size: 2rem;
-                margin-bottom: 40px;
-            }
-
-            .publication-item {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .pub-number {
-                font-size: 1.5rem;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
+            .nav-menu.active { opacity: 1; visibility: visible; transform: none; }
+            .nav-link { padding: 11px 13px; }
+            .nav-link.active::after { display: none; }
+            .nav-link.active { background: var(--wash); }
+            .hero { min-height: auto; padding-top: calc(var(--nav-height) + 60px); }
+            .hero-layout { grid-template-columns: 1fr; gap: 54px; }
+            .hero-text { max-width: 660px; }
+            .hero-title { font-size: clamp(4rem, 13vw, 6rem); }
+            .hero-visual { min-height: 0; }
+            .visual-card { width: min(100%, 480px); aspect-ratio: .95; }
+            .fiber-graphic { max-height: 265px; }
+            .about-layout { grid-template-columns: 1fr; gap: 34px; }
+            .research-tags { max-width: none; }
+            .research-card { padding: 30px; }
+            .contact-panel { grid-template-columns: 1fr; }
+            .contact-info { grid-template-columns: repeat(2, 1fr); }
         }
-
-        @media (max-width: 480px) {
-            .hero-title .name {
-                font-size: 2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .research-card {
-                padding: 24px;
-            }
+        @media (max-width: 600px) {
+            .container { width: min(calc(100% - 32px), var(--container)); }
+            .section { padding: 68px 0; }
+            .section-heading { margin-bottom: 34px; }
+            .section-description { font-size: .94rem; }
+            .nav-logo { font-size: .9rem; }
+            .hero { padding-top: calc(var(--nav-height) + 42px); padding-bottom: 58px; }
+            .hero-title { font-size: clamp(3.65rem, 19vw, 5.3rem); }
+            .hero-role { font-size: .95rem; }
+            .hero-role span { display: block; margin-top: 3px; }
+            .hero-subtitle { font-size: .95rem; }
+            .hero-buttons .btn { flex: 1; padding-inline: 15px; }
+            .hero-stats { justify-content: space-between; }
+            .stat-item { min-width: 0; flex: 1; padding-inline: 16px; }
+            .stat-number { font-size: 1.7rem; }
+            .stat-label { font-size: .63rem; }
+            .visual-card { padding: 23px; aspect-ratio: .83; }
+            .visual-note { right: -4px; bottom: 26px; }
+            .intro-description { font-size: 1rem; }
+            .timeline-item { grid-template-columns: 1fr; gap: 8px; padding-left: 26px; padding-bottom: 36px; }
+            .research-grid { grid-template-columns: 1fr; }
+            .research-card { padding: 28px 24px; }
+            .publication-item { grid-template-columns: 34px 1fr; gap: 12px; padding-block: 22px; }
+            .publication-item:hover { padding-inline: 8px; }
+            .pub-content h3 { font-size: .94rem; }
+            .publications-more { align-items: flex-start; flex-direction: column; }
+            .contact-section { padding: 64px 0; }
+            .contact-panel { gap: 30px; padding: 30px 24px; border-radius: 22px; }
+            .contact-info { grid-template-columns: 1fr; }
+            .contact-item { flex-direction: row; padding: 18px; }
+            .footer-content { flex-wrap: wrap; }
+            .footer-bottom { order: 3; width: 100%; }
+            .back-to-top { right: 16px; bottom: 16px; }
+        }
+        @media (max-width: 380px) {
+            .hero-buttons { flex-direction: column; }
+            .hero-title { font-size: 3.4rem; }
+            .stat-item { padding-inline: 10px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+            .reveal { opacity: 1; transform: none; }
         }
     </style>
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"Person","name":"Wu Hanshuo","jobTitle":"Research Associate","affiliation":{"@type":"Organization","name":"National University of Defense Technology"},"knowsAbout":["High-Power Fiber Lasers","Transverse Mode Instability","Fiber Amplifiers"],"sameAs":["https://www.researchgate.net/profile/Wu-Hanshuo","https://github.com/AFL-NUDT"]}
+    </script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">Wu Hanshuo</a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-menu">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="container nav-container">
+            <a href="#home" class="nav-logo" aria-label="Wu Hanshuo — Home"><span class="logo-mark" aria-hidden="true"></span>Wu Hanshuo</a>
+            <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu"><span class="hamburger" aria-hidden="true"></span></button>
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
@@ -1154,795 +413,315 @@
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="greeting">Hello, I'm</span>
-                    <span class="name">Wu Hanshuo</span>
-                    <span class="title">PhD, Research Associate</span>
-                </h1>
-                <p class="hero-subtitle">Fiber Laser Technology | High-Power Fiber Lasers | Transverse Mode Instability</p>
-                <div class="hero-buttons">
-                    <a href="#publications" class="btn btn-primary">View Publications</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+    <main id="main-content">
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="container hero-layout">
+                <div class="hero-text">
+                    <div class="hero-eyebrow">Optical Engineering · NUDT</div>
+                    <h1 class="hero-title" id="hero-title">Wu <span>Hanshuo</span></h1>
+                    <p class="hero-role">PhD, Research Associate <span>National University of Defense Technology</span></p>
+                    <p class="hero-subtitle">Advancing high-power fiber laser systems through fiber design, amplifier engineering, and transverse mode instability suppression.</p>
+                    <div class="hero-buttons">
+                        <a href="#publications" class="btn btn-primary">Explore publications <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        <a href="#contact" class="btn btn-secondary">Get in touch</a>
+                    </div>
+                    <div class="hero-stats" aria-label="ResearchGate statistics">
+                        <div class="stat-item"><strong class="stat-number" id="stat-publications">105</strong><span class="stat-label">Publications</span></div>
+                        <div class="stat-item"><strong class="stat-number" id="stat-citations">1,041</strong><span class="stat-label">Citations</span></div>
+                        <div class="stat-item"><strong class="stat-number" id="stat-reads">16,593</strong><span class="stat-label">Reads</span></div>
+                    </div>
+                    <div class="data-status" id="data-status" role="status"><i class="fas fa-circle" aria-hidden="true"></i><span>ResearchGate metrics</span></div>
+                </div>
+                <div class="hero-visual" aria-label="Abstract illustration of fiber laser research">
+                    <div class="visual-card">
+                        <div class="visual-top"><span>Research focus / 01</span><i class="fas fa-wave-square" aria-hidden="true"></i></div>
+                        <svg class="fiber-graphic" viewBox="0 0 360 310" role="img" aria-label="Light propagating through an optical fiber">
+                            <defs>
+                                <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#4c7dff" stop-opacity="0"/><stop offset=".48" stop-color="#7fe8f2"/><stop offset="1" stop-color="#fff"/></linearGradient>
+                                <radialGradient id="core"><stop stop-color="#fff"/><stop offset=".18" stop-color="#91edf4"/><stop offset=".5" stop-color="#3384e8" stop-opacity=".5"/><stop offset="1" stop-color="#3384e8" stop-opacity="0"/></radialGradient>
+                            </defs>
+                            <g class="orbit" fill="none" stroke="rgba(156,211,255,.22)">
+                                <ellipse cx="180" cy="155" rx="135" ry="72" transform="rotate(-22 180 155)"/>
+                                <ellipse cx="180" cy="155" rx="112" ry="112" stroke-dasharray="2 8"/>
+                                <ellipse cx="180" cy="155" rx="132" ry="46" transform="rotate(58 180 155)"/>
+                            </g>
+                            <circle cx="180" cy="155" r="116" fill="url(#core)" opacity=".26"/>
+                            <circle cx="180" cy="155" r="72" fill="none" stroke="rgba(132,221,239,.22)"/>
+                            <circle cx="180" cy="155" r="49" fill="none" stroke="rgba(132,221,239,.36)"/>
+                            <circle cx="180" cy="155" r="24" fill="url(#core)"/>
+                            <path d="M12 218 C90 220 90 92 180 155 S272 205 348 82" fill="none" stroke="url(#beam)" stroke-width="3"/>
+                            <path class="pulse" d="M12 218 C90 220 90 92 180 155 S272 205 348 82" fill="none" stroke="#d9fcff" stroke-width="1.3"/>
+                            <g fill="#b9f6ff"><circle cx="66" cy="178" r="3"/><circle cx="294" cy="147" r="3"/><circle cx="326" cy="112" r="2"/></g>
+                            <g fill="rgba(255,255,255,.5)" font-family="DM Sans, sans-serif" font-size="9" letter-spacing="1"><text x="18" y="244">PUMP INPUT</text><text x="259" y="68">LASER OUTPUT</text></g>
+                        </svg>
+                        <div class="visual-caption"><small>High-power photonics</small><h2>Scaling power.<br>Preserving beam quality.</h2><p>Exploring the physical limits of fiber lasers and the engineering paths beyond them.</p></div>
+                    </div>
+                    <div class="visual-note"><i class="fas fa-flask" aria-hidden="true"></i><div><strong>Fiber Laser Technology</strong><span>Theory · Design · Experiment</span></div></div>
                 </div>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="section about-section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-wrapper">
-                <div class="about-intro">
-                    <h3 class="intro-name">Wu Hanshuo, PhD</h3>
-                    <p class="intro-affiliation">National University of Defense Technology</p>
-                    <p class="intro-description">
-                        I am a dedicated researcher specializing in high-power fiber lasers and fiber amplifiers, 
-                        with extensive expertise in power scaling, transverse mode instability (TMI) suppression, 
-                        and novel fiber structure design. My research centers on overcoming the fundamental 
-                        limitations in high-power fiber laser systems, investigating TMI as one of the primary 
-                        bottlenecks for power scaling. I develop innovative solutions including confined-doped 
-                        fiber designs, low-NA fiber architectures, and novel pumping strategies to push the 
-                        boundaries of fiber laser performance. Through innovative approaches in fiber design 
-                        and pumping schemes, my work focuses on achieving high-brightness, high-power laser 
-                        output with excellent beam quality.
-                    </p>
-                </div>
-                
-                <div class="research-tags">
-                    <span class="tag-label">Research Areas:</span>
-                    <div class="tags-container">
-                        <span class="research-tag">Fiber Lasers</span>
-                        <span class="research-tag">High-Power Amplifiers</span>
-                        <span class="research-tag">Mode Instability</span>
-                        <span class="research-tag">Confined-Doped Fiber</span>
-                        <span class="research-tag">Tandem Pumping</span>
-                        <span class="research-tag">Beam Quality</span>
-                        <span class="research-tag">SRS/SBS Suppression</span>
-                        <span class="research-tag">Raman Lasers</span>
+        <section id="about" class="section about-section" aria-labelledby="about-title">
+            <div class="container">
+                <div class="section-heading reveal"><div class="section-kicker">01 / Profile</div><h2 class="section-title" id="about-title">Research with a clear purpose.</h2></div>
+                <div class="about-layout">
+                    <div class="about-intro reveal">
+                        <h3 class="intro-name">Wu Hanshuo, PhD</h3>
+                        <p class="intro-affiliation">Research Associate · National University of Defense Technology</p>
+                        <p class="intro-description">I am a researcher specializing in high-power fiber lasers and fiber amplifiers, with expertise in power scaling, transverse mode instability (TMI) suppression, and novel fiber structure design.</p>
+                        <p class="intro-description">My work addresses the fundamental limitations of high-power fiber laser systems. I develop confined-doped fiber designs, low-NA architectures, and novel pumping strategies to achieve high-brightness, high-power laser output with excellent beam quality.</p>
                     </div>
+                    <aside class="research-tags reveal" aria-label="Research keywords">
+                        <span class="tag-label">Research keywords</span>
+                        <div class="tags-container">
+                            <span class="research-tag">Fiber Lasers</span><span class="research-tag">High-Power Amplifiers</span><span class="research-tag">Mode Instability</span><span class="research-tag">Confined-Doped Fiber</span><span class="research-tag">Tandem Pumping</span><span class="research-tag">Beam Quality</span><span class="research-tag">SRS/SBS Suppression</span><span class="research-tag">Raman Lasers</span>
+                        </div>
+                    </aside>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="education" class="section education-section">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Doctor of Philosophy in Optical Engineering</h3>
-                        <p class="institution">National University of Defense Technology (2018-2022)</p>
-                        <p class="description">Specialization: Fiber Laser Technology. Focused on theoretical and experimental research of high-power fiber lasers, with significant progress in transverse mode instability suppression and fiber structure optimization design. Developed novel confined-doped fiber architectures and achieved record-breaking laser output powers.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Master of Science in Optical Engineering</h3>
-                        <p class="institution">National University of Defense Technology (2015-2017)</p>
-                        <p class="description">Specialization: Fiber Laser Technology. Conducted research on fiber laser systems and amplifier configurations, building foundational expertise in high-power laser technology and optical system design.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Bachelor of Science in Optical Engineering</h3>
-                        <p class="institution">Zhejiang University (2011-2015)</p>
-                        <p class="description">Established comprehensive knowledge in optical engineering fundamentals, including laser physics, optical system design, and photonic devices. Graduated with solid theoretical foundation for advanced research in fiber optics.</p>
-                    </div>
+        <section id="education" class="section education-section" aria-labelledby="education-title">
+            <div class="container">
+                <div class="section-heading reveal"><div class="section-kicker">02 / Education</div><h2 class="section-title" id="education-title">A foundation in optics.</h2><p class="section-description">Academic training in optical engineering, from fundamentals to advanced fiber laser research.</p></div>
+                <div class="timeline">
+                    <article class="timeline-item reveal"><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-date">2018 — 2022</div><div class="timeline-content"><h3>Doctor of Philosophy in Optical Engineering</h3><p class="institution">National University of Defense Technology</p><p class="description">Focused on theoretical and experimental research of high-power fiber lasers, with significant progress in transverse mode instability suppression and fiber structure optimization design. Developed novel confined-doped fiber architectures and achieved record-breaking laser output powers.</p></div></article>
+                    <article class="timeline-item reveal"><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-date">2015 — 2017</div><div class="timeline-content"><h3>Master of Science in Optical Engineering</h3><p class="institution">National University of Defense Technology</p><p class="description">Conducted research on fiber laser systems and amplifier configurations, building foundational expertise in high-power laser technology and optical system design.</p></div></article>
+                    <article class="timeline-item reveal"><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-date">2011 — 2015</div><div class="timeline-content"><h3>Bachelor of Science in Optical Engineering</h3><p class="institution">Zhejiang University</p><p class="description">Established comprehensive knowledge in optical engineering fundamentals, including laser physics, optical system design, and photonic devices.</p></div></article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="research" class="section research-section">
-        <div class="container">
-            <h2 class="section-title">Research Areas</h2>
-            <div class="research-grid">
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>High-Power Fiber Lasers</h3>
-                    <p>Research on power scaling technologies for kilowatt to multi-kilowatt high-power fiber lasers, including tandem pumping schemes, fiber structure optimization, and thermal management.</p>
-                    <ul class="research-topics">
-                        <li>Bidirectional tandem pumping technology</li>
-                        <li>Confined-doped fiber design</li>
-                        <li>High-brightness laser output</li>
-                    </ul>
-                </div>
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i class="fas fa-wave-square"></i>
-                    </div>
-                    <h3>Transverse Mode Instability</h3>
-                    <p>In-depth investigation of the physical mechanisms of transverse mode instability (TMI) effects, proposing and validating multiple effective TMI mitigation strategies.</p>
-                    <ul class="research-topics">
-                        <li>Static mode degradation effects</li>
-                        <li>Dynamic TMI suppression mechanisms</li>
-                        <li>Low-NA fiber design</li>
-                    </ul>
-                </div>
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <h3>Fiber Amplifier Systems</h3>
-                    <p>Development of high-performance fiber amplifier systems with optimized nonlinear effect suppression for high-power, high beam quality output.</p>
-                    <ul class="research-topics">
-                        <li>MOPA structure design</li>
-                        <li>SRS/SBS effect suppression</li>
-                        <li>Narrow-linewidth amplifiers</li>
-                    </ul>
-                </div>
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i class="fas fa-random"></i>
-                    </div>
-                    <h3>Random Raman Fiber Lasers</h3>
-                    <p>Research on cavity structure optimization for random distributed feedback Raman fiber lasers to improve Stokes conversion efficiency and output power.</p>
-                    <ul class="research-topics">
-                        <li>Full-open cavity RRFL optimization</li>
-                        <li>High-order Stokes wave suppression</li>
-                        <li>Power scaling techniques</li>
-                    </ul>
+        <section id="research" class="section research-section" aria-labelledby="research-title">
+            <div class="container">
+                <div class="section-heading reveal"><div class="section-kicker">03 / Research</div><h2 class="section-title" id="research-title">From mechanism to system.</h2><p class="section-description">Connecting physical insight, fiber architecture, and amplifier design to improve laser performance.</p></div>
+                <div class="research-grid">
+                    <article class="research-card reveal"><div class="research-card-header"><div class="research-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div><span class="research-index">01</span></div><h3>High-Power Fiber Lasers</h3><p>Power scaling technologies for kilowatt to multi-kilowatt fiber lasers, including tandem pumping schemes, fiber structure optimization, and thermal management.</p><ul class="research-topics"><li>Bidirectional tandem pumping</li><li>Confined-doped fiber design</li><li>High-brightness output</li></ul></article>
+                    <article class="research-card reveal"><div class="research-card-header"><div class="research-icon"><i class="fas fa-wave-square" aria-hidden="true"></i></div><span class="research-index">02</span></div><h3>Transverse Mode Instability</h3><p>Investigating the physical mechanisms of transverse mode instability and validating effective mitigation strategies for high-power operation.</p><ul class="research-topics"><li>Static mode degradation</li><li>Dynamic TMI suppression</li><li>Low-NA fiber design</li></ul></article>
+                    <article class="research-card reveal"><div class="research-card-header"><div class="research-icon"><i class="fas fa-microchip" aria-hidden="true"></i></div><span class="research-index">03</span></div><h3>Fiber Amplifier Systems</h3><p>High-performance fiber amplifier systems with optimized nonlinear effect suppression for high-power, high beam quality output.</p><ul class="research-topics"><li>MOPA structure design</li><li>SRS/SBS suppression</li><li>Narrow-linewidth amplifiers</li></ul></article>
+                    <article class="research-card reveal"><div class="research-card-header"><div class="research-icon"><i class="fas fa-random" aria-hidden="true"></i></div><span class="research-index">04</span></div><h3>Random Raman Fiber Lasers</h3><p>Cavity structure optimization for random distributed feedback Raman fiber lasers to improve Stokes conversion efficiency and output power.</p><ul class="research-topics"><li>Full-open cavity RRFL</li><li>High-order Stokes suppression</li><li>Power scaling</li></ul></article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="publications" class="section publications-section">
-        <div class="container">
-            <h2 class="section-title">Featured Publications</h2>
-            <div class="publications-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="tmi">Mode Instability</button>
-                <button class="filter-btn" data-filter="amplifier">Amplifiers</button>
-                <button class="filter-btn" data-filter="laser">Lasers</button>
+        <section id="publications" class="section publications-section" aria-labelledby="publications-title">
+            <div class="container">
+                <div class="publications-top"><div class="section-heading reveal"><div class="section-kicker">04 / Publications</div><h2 class="section-title" id="publications-title">Selected research.</h2><p class="section-description">Featured work across mode instability, fiber amplifiers, and laser systems.</p></div></div>
+                <div class="publications-filter" role="group" aria-label="Filter publications">
+                    <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button><button class="filter-btn" type="button" data-filter="tmi" aria-pressed="false">Mode Instability</button><button class="filter-btn" type="button" data-filter="amplifier" aria-pressed="false">Amplifiers</button><button class="filter-btn" type="button" data-filter="laser" aria-pressed="false">Lasers</button>
+                </div>
+                <div class="publications-list" aria-live="polite">
+                    <article class="publication-item" data-category="tmi"><div class="pub-number">01</div><div class="pub-content"><h3>Mitigation of dynamic transverse mode instability in two-mode fiber lasers through static mode degradation</h3><p class="pub-journal">Revealed the physical mechanism of static mode degradation suppressing dynamic TMI effects</p><div class="pub-tags"><span class="tag">TMI</span><span class="tag">Mode Degradation</span></div></div></article>
+                    <article class="publication-item" data-category="amplifier"><div class="pub-number">02</div><div class="pub-content"><h3>Confined-doped fiber for high-power operation and transverse mode instability suppression</h3><p class="pub-journal">Confined-doped fiber with core/inner-cladding diameter of 40/250 μm and relative doping ratio of 0.75</p><div class="pub-tags"><span class="tag">Confined-Doped Fiber</span><span class="tag">Tandem Pumping</span></div></div></article>
+                    <article class="publication-item" data-category="amplifier"><div class="pub-number">03</div><div class="pub-content"><h3>High-brightness bidirectional tandem-pumped confined-doped fiber amplifier with nearly 8 kW output power</h3><p class="pub-journal">High-brightness bidirectional tandem-pumped confined-doped fiber amplifier with nearly 8 kW output</p><div class="pub-tags"><span class="tag">8 kW</span><span class="tag">Bidirectional Pumping</span></div></div></article>
+                    <article class="publication-item" data-category="amplifier"><div class="pub-number">04</div><div class="pub-content"><h3>High-power narrow-linewidth confined-doped ytterbium fiber amplifier based on side-coupled combiners</h3><p class="pub-journal">High-power narrow-linewidth confined-doped ytterbium fiber amplifier based on side-coupled combiners</p><div class="pub-tags"><span class="tag">Narrow-Linewidth</span><span class="tag">SRS/SBS Suppression</span></div></div></article>
+                    <article class="publication-item" data-category="laser"><div class="pub-number">05</div><div class="pub-content"><h3>High-power bidirectional output all-fiber laser oscillator at 1050 nm with composite cavity architecture</h3><p class="pub-journal">1050 nm high-power bidirectional output all-fiber laser oscillator employing composite cavity architecture</p><div class="pub-tags"><span class="tag">Bidirectional Output</span><span class="tag">Composite Cavity</span></div></div></article>
+                    <article class="publication-item" data-category="laser"><div class="pub-number">06</div><div class="pub-content"><h3>Random Raman fiber lasers with enhanced Stokes conversion efficiency</h3><p class="pub-journal">Optimization of Stokes conversion efficiency in random Raman fiber lasers</p><div class="pub-tags"><span class="tag">RRFL</span><span class="tag">Raman Laser</span></div></div></article>
+                    <article class="publication-item" data-category="tmi"><div class="pub-number">07</div><div class="pub-content"><h3>Low-NA confined-doped fiber architecture for TMI mitigation</h3><p class="pub-journal">Low-NA confined-doped fiber architecture synergistically mitigating TMI effects</p><div class="pub-tags"><span class="tag">Low-NA Fiber</span><span class="tag">Waveguide Engineering</span></div></div></article>
+                    <article class="publication-item" data-category="laser"><div class="pub-number">08</div><div class="pub-content"><h3>Dual-wavelength fiber laser based on cascaded resonant cavity with fiber Bragg gratings</h3><p class="pub-journal">Dual-wavelength fiber laser based on cascaded resonant cavity with fiber Bragg gratings</p><div class="pub-tags"><span class="tag">Dual-Wavelength</span><span class="tag">FBG</span></div></div></article>
+                    <article class="publication-item" data-category="tmi"><div class="pub-number">09</div><div class="pub-content"><h3>Novel TMI mitigation strategy in bidirectional output fiber laser with QCW pump</h3><p class="pub-journal">Novel TMI mitigation strategy using quasi-continuous wave pump in bidirectional output fiber laser</p><div class="pub-tags"><span class="tag">QCW Pump</span><span class="tag">TMI Suppression</span></div></div></article>
+                    <article class="publication-item" data-category="laser"><div class="pub-number">10</div><div class="pub-content"><h3>Kilowatt-level ytterbium-doped fiber laser operating from −50°C to 50°C</h3><p class="pub-journal">Kilowatt-level ytterbium-doped fiber laser operating stably over a wide temperature range from −50°C to 50°C</p><div class="pub-tags"><span class="tag">Wide Temperature</span><span class="tag">Reliability</span></div></div></article>
+                    <article class="publication-item" data-category="amplifier"><div class="pub-number">11</div><div class="pub-content"><h3>Long-tapered Yb³⁺-doped fiber laser directly pumped by long-wavelength LDs</h3><p class="pub-journal">Long-tapered Yb³⁺-doped fiber laser directly pumped by long-wavelength laser diodes</p><div class="pub-tags"><span class="tag">MOPA</span><span class="tag">Long-Wavelength Pump</span></div></div></article>
+                    <article class="publication-item" data-category="laser"><div class="pub-number">12</div><div class="pub-content"><h3>Bidirectional output oscillating-amplifying integrated fiber laser (B-OAIFL)</h3><p class="pub-journal">SRS effect optimization in bidirectional output oscillating-amplifying integrated fiber laser</p><div class="pub-tags"><span class="tag">Integrated Design</span><span class="tag">SRS Optimization</span></div></div></article>
+                </div>
+                <div class="publications-more"><p><strong id="total-publications">105</strong> publications in total. Above are featured works.</p><a href="https://www.researchgate.net/profile/Wu-Hanshuo" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View all on ResearchGate <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
             </div>
-            <div class="publications-list">
-                <div class="publication-item" data-category="tmi">
-                    <div class="pub-number">01</div>
-                    <div class="pub-content">
-                        <h3>Mitigation of dynamic transverse mode instability in two-mode fiber lasers through static mode degradation</h3>
-                        <p class="pub-journal">Revealed the physical mechanism of static mode degradation suppressing dynamic TMI effects</p>
-                        <div class="pub-tags">
-                            <span class="tag">TMI</span>
-                            <span class="tag">Mode Degradation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication-item" data-category="amplifier">
-                    <div class="pub-number">02</div>
-                    <div class="pub-content">
-                        <h3>Confined-doped fiber for high-power operation and transverse mode instability suppression</h3>
-                        <p class="pub-journal">Confined-doped fiber with core/inner-cladding diameter of 40/250 μm and relative doping ratio of 0.75</p>
-                        <div class="pub-tags">
-                            <span class="tag">Confined-Doped Fiber</span>
-                            <span class="tag">Tandem Pumping</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication-item" data-category="amplifier">
-                    <div class="pub-number">03</div>
-                    <div class="pub-content">
-                        <h3>High-brightness bidirectional tandem-pumped confined-doped fiber amplifier with nearly 8 kW output power</h3>
-                        <p class="pub-journal">High-brightness bidirectional tandem-pumped confined-doped fiber amplifier with nearly 8 kW output</p>
-                        <div class="pub-tags">
-                            <span class="tag">8kW</span>
-                            <span class="tag">Bidirectional Pumping</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication-item" data-category="amplifier">
-                    <div class="pub-number">04</div>
-                    <div class="pub-content">
-                        <h3>High-power narrow-linewidth confined-doped ytterbium fiber amplifier based on side-coupled combiners</h3>
-                        <p class="pub-journal">High-power narrow-linewidth confined-doped ytterbium fiber amplifier based on side-coupled combiners</p>
-                        <div class="pub-tags">
-                            <span class="tag">Narrow-Linewidth</span>
-                            <span class="tag">SRS/SBS Suppression</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication-item" data-category="laser">
-                    <div class="pub-number">05</div>
-                    <div class="pub-content">
-                        <h3>High-power bidirectional output all-fiber laser oscillator at 1050 nm with composite cavity architecture</h3>
-                        <p class="pub-journal">1050 nm high-power bidirectional output all-fiber laser oscillator employing composite cavity architecture</p>
-                        <div class="pub-tags">
-                            <span class="tag">Bidirectional Output</span>
-                            <span class="tag">Composite Cavity</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication-item" data-category="laser">
-                    <div class="pub-number">06</div>
-                    <div class="pub-content">
-                        <h3>Random Raman fiber lasers with enhanced Stokes conversion efficiency</h3>
-                        <p class="pub-journal">Optimization of Stokes conversion efficiency in random Raman fiber lasers</p>
-                        <div class="pub-tags">
-                            <span class="tag">RRFL</span>
-                            <span class="tag">Raman Laser</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication-item" data-category="tmi">
-                    <div class="pub-number">07</div>
-                    <div class="pub-content">
-                        <h3>Low-NA confined-doped fiber architecture for TMI mitigation</h3>
-                        <p class="pub-journal">Low-NA confined-doped fiber architecture synergistically mitigating TMI effects</p>
-                        <div class="pub-tags">
-                            <span class="tag">Low-NA Fiber</span>
-                            <span class="tag">Waveguide Engineering</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication-item" data-category="laser">
-                    <div class="pub-number">08</div>
-                    <div class="pub-content">
-                        <h3>Dual-wavelength fiber laser based on cascaded resonant cavity with fiber Bragg gratings</h3>
-                        <p class="pub-journal">Dual-wavelength fiber laser based on cascaded resonant cavity with fiber Bragg gratings</p>
-                        <div class="pub-tags">
-                            <span class="tag">Dual-Wavelength</span>
-                            <span class="tag">FBG</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication-item" data-category="tmi">
-                    <div class="pub-number">09</div>
-                    <div class="pub-content">
-                        <h3>Novel TMI mitigation strategy in bidirectional output fiber laser with QCW pump</h3>
-                        <p class="pub-journal">Novel TMI mitigation strategy using quasi-continuous wave pump in bidirectional output fiber laser</p>
-                        <div class="pub-tags">
-                            <span class="tag">QCW Pump</span>
-                            <span class="tag">TMI Suppression</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication-item" data-category="laser">
-                    <div class="pub-number">10</div>
-                    <div class="pub-content">
-                        <h3>Kilowatt-level ytterbium-doped fiber laser operating from -50°C to 50°C</h3>
-                        <p class="pub-journal">Kilowatt-level ytterbium-doped fiber laser operating stably over a wide temperature range from -50°C to 50°C</p>
-                        <div class="pub-tags">
-                            <span class="tag">Wide Temperature</span>
-                            <span class="tag">Reliability</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication-item" data-category="amplifier">
-                    <div class="pub-number">11</div>
-                    <div class="pub-content">
-                        <h3>Long-tapered Yb³⁺-doped fiber laser directly pumped by long-wavelength LDs</h3>
-                        <p class="pub-journal">Long-tapered Yb³⁺-doped fiber laser directly pumped by long-wavelength laser diodes</p>
-                        <div class="pub-tags">
-                            <span class="tag">MOPA</span>
-                            <span class="tag">Long-Wavelength Pump</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication-item" data-category="laser">
-                    <div class="pub-number">12</div>
-                    <div class="pub-content">
-                        <h3>Bidirectional output oscillating-amplifying integrated fiber laser (B-OAIFL)</h3>
-                        <p class="pub-journal">SRS effect optimization in bidirectional output oscillating-amplifying integrated fiber laser</p>
-                        <div class="pub-tags">
-                            <span class="tag">Integrated Design</span>
-                            <span class="tag">SRS Optimization</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="publications-more">
-                <p><strong id="total-publications">--</strong> publications in total. Above are featured works.</p>
-                <a href="https://www.researchgate.net/profile/Wu-Hanshuo" target="_blank" class="btn btn-outline">View All Publications</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <div class="email-protected">
-                                <span class="email-hidden" id="email-display">whs***@163.com</span>
-                                <button class="reveal-email-btn" id="reveal-email-btn" title="Click to verify and reveal email">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-globe"></i>
-                        <div class="contact-details">
-                            <h3>ResearchGate</h3>
-                            <a href="https://www.researchgate.net/profile/Wu-Hanshuo" target="_blank">Visit Profile</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-university"></i>
-                        <div class="contact-details">
-                            <h3>Affiliation</h3>
-                            <p>National University of Defense Technology</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-flask"></i>
-                        <div class="contact-details">
-                            <h3>Research Fields</h3>
-                            <p>Fiber Lasers · High-Power Amplifiers · Mode Instability</p>
-                        </div>
+        <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="contact-panel reveal">
+                    <div class="contact-heading"><div class="section-kicker">05 / Contact</div><h2 class="section-title" id="contact-title">Let’s advance photonics together.</h2><p>For research collaboration, academic discussion, or questions about my work, feel free to get in touch.</p></div>
+                    <div class="contact-info">
+                        <div class="contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><div class="contact-details"><h3>Email</h3><div class="email-protected"><span class="email-hidden" id="email-display">whs***@163.com</span><button class="reveal-email-btn" id="reveal-email-btn" type="button" title="Verify and reveal email" aria-label="Verify and reveal email"><i class="fas fa-eye" aria-hidden="true"></i></button></div></div></div>
+                        <div class="contact-item"><i class="fab fa-researchgate" aria-hidden="true"></i><div class="contact-details"><h3>ResearchGate</h3><a href="https://www.researchgate.net/profile/Wu-Hanshuo" target="_blank" rel="noopener noreferrer">Visit research profile</a></div></div>
+                        <div class="contact-item"><i class="fas fa-university" aria-hidden="true"></i><div class="contact-details"><h3>Affiliation</h3><p>National University of Defense Technology</p></div></div>
+                        <div class="contact-item"><i class="fas fa-flask" aria-hidden="true"></i><div class="contact-details"><h3>Research fields</h3><p>Fiber Lasers · High-Power Amplifiers · Mode Instability</p></div></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <div class="captcha-modal" id="captcha-modal">
-        <div class="captcha-content">
-            <div class="captcha-header">
-                <i class="fas fa-shield-alt"></i>
-                <h4>Verify to Reveal Email</h4>
-            </div>
-            <p class="captcha-instruction">Please enter the characters shown below:</p>
-            <div class="captcha-display" id="captcha-display"></div>
-            <div class="captcha-input-wrapper">
-                <input type="text" id="captcha-input" placeholder="Enter code" maxlength="6" autocomplete="off">
-                <button class="captcha-refresh" id="captcha-refresh" title="Refresh code">
-                    <i class="fas fa-sync-alt"></i>
-                </button>
-            </div>
-            <div class="captcha-actions">
-                <button class="btn btn-secondary" id="captcha-cancel">Cancel</button>
-                <button class="btn btn-primary" id="captcha-verify">Verify</button>
-            </div>
-            <p class="captcha-error" id="captcha-error"></p>
-        </div>
+    <div class="captcha-modal" id="captcha-modal" role="dialog" aria-modal="true" aria-labelledby="captcha-title" aria-hidden="true">
+        <div class="captcha-content"><div class="captcha-header"><i class="fas fa-shield-halved" aria-hidden="true"></i><h4 id="captcha-title">Verify to reveal email</h4></div><p class="captcha-instruction">Enter the five characters shown below.</p><div class="captcha-display" id="captcha-display" aria-label="Verification code"></div><div class="captcha-input-wrapper"><input type="text" id="captcha-input" aria-label="Verification code" placeholder="Enter code" maxlength="5" autocomplete="off" autocapitalize="characters"><button class="captcha-refresh" id="captcha-refresh" type="button" title="Refresh code" aria-label="Refresh verification code"><i class="fas fa-rotate" aria-hidden="true"></i></button></div><div class="captcha-actions"><button class="btn btn-secondary" id="captcha-cancel" type="button">Cancel</button><button class="btn btn-primary" id="captcha-verify" type="button">Verify</button></div><p class="captcha-error" id="captcha-error" role="alert"></p></div>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Wu Hanshuo</h3>
-                    <p>PhD Researcher | Fiber Laser Technology</p>
-                </div>
-                <div class="footer-links">
-                    <a href="https://www.researchgate.net/profile/Wu-Hanshuo" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Wu Hanshuo. All rights reserved. | Data updated dynamically from ResearchGate</p>
-            </div>
-        </div>
-    </footer>
+    <footer class="footer"><div class="container footer-content"><div class="footer-info">Wu Hanshuo · Fiber Laser Technology</div><div class="footer-bottom">&copy; <span id="current-year">2026</span> Wu Hanshuo. All rights reserved.</div><div class="footer-links"><a href="https://www.researchgate.net/profile/Wu-Hanshuo" target="_blank" rel="noopener noreferrer" title="ResearchGate" aria-label="ResearchGate profile"><i class="fab fa-researchgate" aria-hidden="true"></i></a><a href="https://github.com/AFL-NUDT" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a></div></div></footer>
+    <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
 
     <script>
     (function() {
         'use strict';
-
         const CONFIG = {
             researchGateUrl: 'https://www.researchgate.net/profile/Wu-Hanshuo',
-            corsProxies: [
-                'https://api.allorigins.win/raw?url=',
-                'https://corsproxy.io/?',
-                'https://api.codetabs.com/v1/proxy?quest='
-            ],
-            cacheKey: 'researchgate_data_cache',
-            cacheExpiry: 24 * 60 * 60 * 1000,
-            fallbackData: {
-                publications: 105,
-                citations: 1041,
-                reads: 16593,
-                lastUpdated: new Date().toISOString()
-            }
+            corsProxies: ['https://api.allorigins.win/raw?url=', 'https://corsproxy.io/?', 'https://api.codetabs.com/v1/proxy?quest='],
+            cacheKey: 'researchgate_data_cache', cacheExpiry: 24 * 60 * 60 * 1000,
+            fallbackData: { publications: 105, citations: 1041, reads: 16593, lastUpdated: new Date().toISOString() }
         };
-
         const ResearchGateDataFetcher = {
             async fetchWithProxy(url) {
                 for (const proxy of CONFIG.corsProxies) {
                     try {
                         const controller = new AbortController();
-                        const timeoutId = setTimeout(() => controller.abort(), 10000);
-                        
-                        const response = await fetch(proxy + encodeURIComponent(url), {
-                            method: 'GET',
-                            headers: {
-                                'Accept': 'text/html,application/xhtml+xml'
-                            },
-                            signal: controller.signal
-                        });
-                        
+                        const timeoutId = setTimeout(() => controller.abort(), 8000);
+                        const response = await fetch(proxy + encodeURIComponent(url), { headers: { 'Accept': 'text/html,application/xhtml+xml' }, signal: controller.signal });
                         clearTimeout(timeoutId);
-                        
-                        if (response.ok) {
-                            return await response.text();
-                        }
-                    } catch (error) {
-                        console.warn(`Proxy ${proxy} failed:`, error.message);
-                        continue;
-                    }
+                        if (response.ok) return await response.text();
+                    } catch (error) { console.warn('ResearchGate proxy unavailable:', error.message); }
                 }
-                throw new Error('All CORS proxies failed');
+                throw new Error('All ResearchGate proxies failed');
             },
-
             parseResearchGateData(html) {
-                const data = {
-                    publications: 0,
-                    citations: 0,
-                    reads: 0,
-                    lastUpdated: new Date().toISOString()
-                };
-
-                const publicationMatch = html.match(/Publications\s*\((\d+)\)/i) || 
-                                          html.match(/(\d+)\s*Publications/i) ||
-                                          html.match(/class="nova-legacy-e-text nova-legacy-e-text--size-xl[^"]*"[^>]*>(\d+)</);
-                if (publicationMatch) {
-                    data.publications = parseInt(publicationMatch[1]);
-                }
-
-                const citationMatch = html.match(/Citations[^>]*>[\s\S]*?(\d[\d,]*)/i) ||
-                                      html.match(/(\d[\d,]*)\s*Citations/i) ||
-                                      html.match(/class="nova-legacy-e-text[^"]*nova-legacy-e-text--color-grey-700[^"]*"[^>]*>(\d[\d,]*)</);
-                if (citationMatch) {
-                    data.citations = parseInt(citationMatch[1].replace(/,/g, ''));
-                }
-
-                const readsMatch = html.match(/Reads[^>]*>[\s\S]*?(\d[\d,]*)/i) ||
-                                   html.match(/(\d[\d,]*)\s*Reads/i);
-                if (readsMatch) {
-                    data.reads = parseInt(readsMatch[1].replace(/,/g, ''));
-                }
-
-                if (data.publications === 0 && data.citations === 0 && data.reads === 0) {
-                    const numbers = html.match(/>\s*(\d[\d,]*)\s*</g);
-                    if (numbers && numbers.length >= 3) {
-                        const parsedNumbers = numbers
-                            .slice(0, 5)
-                            .map(n => parseInt(n.replace(/[><,\s]/g, '')))
-                            .filter(n => !isNaN(n) && n > 0);
-                        
-                        if (parsedNumbers.length >= 3) {
-                            parsedNumbers.sort((a, b) => b - a);
-                            data.publications = parsedNumbers[0] || 0;
-                            data.reads = parsedNumbers[1] || 0;
-                            data.citations = parsedNumbers[2] || 0;
-                        }
-                    }
-                }
-
+                const data = { publications: 0, citations: 0, reads: 0, lastUpdated: new Date().toISOString() };
+                const publicationMatch = html.match(/Publications\s*\((\d+)\)/i) || html.match(/(\d+)\s*Publications/i);
+                const citationMatch = html.match(/(\d[\d,]*)\s*Citations/i);
+                const readsMatch = html.match(/(\d[\d,]*)\s*Reads/i);
+                if (publicationMatch) data.publications = parseInt(publicationMatch[1], 10);
+                if (citationMatch) data.citations = parseInt(citationMatch[1].replace(/,/g, ''), 10);
+                if (readsMatch) data.reads = parseInt(readsMatch[1].replace(/,/g, ''), 10);
                 return data;
             },
-
             getCachedData() {
                 try {
-                    const cached = localStorage.getItem(CONFIG.cacheKey);
-                    if (cached) {
-                        const data = JSON.parse(cached);
-                        const now = Date.now();
-                        const cachedTime = new Date(data.lastUpdated).getTime();
-                        
-                        if (now - cachedTime < CONFIG.cacheExpiry) {
-                            return data;
-                        }
-                    }
-                } catch (error) {
-                    console.warn('Failed to read cache:', error);
-                }
+                    const data = JSON.parse(localStorage.getItem(CONFIG.cacheKey));
+                    if (data && Date.now() - new Date(data.lastUpdated).getTime() < CONFIG.cacheExpiry) return data;
+                } catch (error) { console.warn('Unable to read metrics cache'); }
                 return null;
             },
-
-            setCachedData(data) {
+            setCachedData(data) { try { localStorage.setItem(CONFIG.cacheKey, JSON.stringify(data)); } catch (error) {} },
+            async fetchData(force = false) {
+                if (force) { try { localStorage.removeItem(CONFIG.cacheKey); } catch (error) {} }
+                const cached = this.getCachedData();
+                if (cached) return { ...cached, fromCache: true };
                 try {
-                    localStorage.setItem(CONFIG.cacheKey, JSON.stringify(data));
-                } catch (error) {
-                    console.warn('Failed to write cache:', error);
-                }
-            },
-
-            async fetchData() {
-                const cachedData = this.getCachedData();
-                if (cachedData) {
-                    console.log('Using cached data from:', cachedData.lastUpdated);
-                    return { ...cachedData, fromCache: true };
-                }
-
-                try {
-                    console.log('Fetching fresh data from ResearchGate...');
-                    const html = await this.fetchWithProxy(CONFIG.researchGateUrl);
-                    const data = this.parseResearchGateData(html);
-                    
-                    if (data.publications > 0 || data.citations > 0 || data.reads > 0) {
-                        this.setCachedData(data);
-                        return { ...data, fromCache: false };
-                    }
-                } catch (error) {
-                    console.error('Failed to fetch ResearchGate data:', error);
-                }
-
-                console.log('Using fallback data');
+                    const data = this.parseResearchGateData(await this.fetchWithProxy(CONFIG.researchGateUrl));
+                    if (data.publications > 0 || data.citations > 0 || data.reads > 0) { this.setCachedData(data); return { ...data, fromCache: false }; }
+                } catch (error) { console.warn('Using stored ResearchGate metrics'); }
                 return { ...CONFIG.fallbackData, fromCache: false, isFallback: true };
-            },
-
-            async refreshData() {
-                localStorage.removeItem(CONFIG.cacheKey);
-                return await this.fetchData();
             }
         };
 
-        function animateNumber(element, start, end, duration) {
-            if (!element) return;
-            const startTime = performance.now();
-            const diff = end - start;
-            
-            function update(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const easeProgress = 1 - Math.pow(1 - progress, 3);
-                const current = Math.floor(start + diff * easeProgress);
-                
-                element.textContent = current.toLocaleString();
-                
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                }
-            }
-            
-            requestAnimationFrame(update);
+        const navbar = document.querySelector('.navbar');
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = [...document.querySelectorAll('.nav-link')];
+        const backToTop = document.querySelector('.back-to-top');
+        const sections = [...document.querySelectorAll('main section[id]')];
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function closeMenu() {
+            navToggle.classList.remove('active'); navMenu.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false'); navToggle.setAttribute('aria-label', 'Open navigation');
+            document.body.classList.remove('menu-open');
         }
+        navToggle.addEventListener('click', () => {
+            const open = !navMenu.classList.contains('active');
+            navToggle.classList.toggle('active', open); navMenu.classList.toggle('active', open);
+            navToggle.setAttribute('aria-expanded', String(open)); navToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+            document.body.classList.toggle('menu-open', open && window.innerWidth <= 820);
+        });
+        navLinks.forEach(link => link.addEventListener('click', closeMenu));
+        document.addEventListener('click', event => { if (!navbar.contains(event.target)) closeMenu(); });
+        window.addEventListener('resize', () => { if (window.innerWidth > 820) closeMenu(); });
 
-        function updateAllStats(data) {
-            const totalPublications = document.getElementById('total-publications');
-            
-            if (totalPublications) {
-                animateNumber(totalPublications, 0, data.publications, 1500);
-            }
-        }
-
-        async function initializeApp() {
-            const navbar = document.querySelector('.navbar');
-            const navToggle = document.querySelector('.nav-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const publicationItems = document.querySelectorAll('.publication-item');
-
-            try {
-                const data = await ResearchGateDataFetcher.fetchData();
-                updateAllStats(data);
-                console.log('ResearchGate data loaded:', data);
-            } catch (error) {
-                console.error('Failed to load ResearchGate data:', error);
-                const fallback = CONFIG.fallbackData;
-                updateAllStats(fallback);
-            }
-
-            function handleScroll() {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-
-                updateActiveNavLink();
-            }
-
-            function updateActiveNavLink() {
-                const sections = document.querySelectorAll('section[id]');
-                const scrollPosition = window.scrollY + 100;
-
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.offsetHeight;
-                    const sectionId = section.getAttribute('id');
-
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                        navLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === `#${sectionId}`) {
-                                link.classList.add('active');
-                            }
-                        });
-                    }
-                });
-            }
-
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function() {
-                    navToggle.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
-            }
-
+        let scrollTicking = false;
+        function updateOnScroll() {
+            const y = window.scrollY;
+            navbar.classList.toggle('scrolled', y > 20);
+            backToTop.classList.toggle('visible', y > 650);
+            let current = 'home';
+            sections.forEach(section => { if (y + 160 >= section.offsetTop) current = section.id; });
             navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    if (targetSection) {
-                        const offsetTop = targetSection.offsetTop - 70;
-                        window.scrollTo({
-                            top: offsetTop,
-                            behavior: 'smooth'
-                        });
-                    }
-
-                    if (navToggle && navMenu) {
-                        navToggle.classList.remove('active');
-                        navMenu.classList.remove('active');
-                    }
-                });
+                const active = link.getAttribute('href') === '#' + current;
+                link.classList.toggle('active', active);
+                if (active) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
             });
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-
-                    const filter = this.getAttribute('data-filter');
-
-                    publicationItems.forEach(item => {
-                        const category = item.getAttribute('data-category');
-                        
-                        if (filter === 'all' || category === filter) {
-                            item.classList.remove('hidden');
-                            item.style.animation = 'fadeInUp 0.5s ease forwards';
-                        } else {
-                            item.classList.add('hidden');
-                        }
-                    });
-                });
-            });
-
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            const animatedElements = document.querySelectorAll('.research-card, .publication-item');
-            animatedElements.forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-
-            window.addEventListener('scroll', handleScroll);
-            handleScroll();
-
-            setInterval(async () => {
-                const data = await ResearchGateDataFetcher.fetchData();
-                if (!data.fromCache) {
-                    console.log('Auto-refreshed data:', data);
-                    updateAllStats(data);
-                }
-            }, 30 * 60 * 1000);
-
-            const EmailProtection = {
-                realEmail: 'whsopt@163.com',
-                currentCaptcha: '',
-                
-                generateCaptcha() {
-                    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-                    let captcha = '';
-                    for (let i = 0; i < 5; i++) {
-                        captcha += chars.charAt(Math.floor(Math.random() * chars.length));
-                    }
-                    this.currentCaptcha = captcha;
-                    return captcha;
-                },
-                
-                init() {
-                    const modal = document.getElementById('captcha-modal');
-                    const display = document.getElementById('captcha-display');
-                    const input = document.getElementById('captcha-input');
-                    const revealBtn = document.getElementById('reveal-email-btn');
-                    const verifyBtn = document.getElementById('captcha-verify');
-                    const cancelBtn = document.getElementById('captcha-cancel');
-                    const refreshBtn = document.getElementById('captcha-refresh');
-                    const errorEl = document.getElementById('captcha-error');
-                    const emailDisplay = document.getElementById('email-display');
-                    
-                    if (!modal) return;
-                    
-                    const showCaptcha = () => {
-                        display.textContent = this.generateCaptcha();
-                        modal.classList.add('active');
-                        input.value = '';
-                        errorEl.textContent = '';
-                        input.focus();
-                    };
-                    
-                    const hideCaptcha = () => {
-                        modal.classList.remove('active');
-                    };
-                    
-                    const verifyCaptcha = () => {
-                        const userInput = input.value.toUpperCase().trim();
-                        if (userInput === this.currentCaptcha) {
-                            hideCaptcha();
-                            emailDisplay.textContent = this.realEmail;
-                            emailDisplay.classList.add('email-revealed');
-                            revealBtn.innerHTML = '<i class="fas fa-check"></i>';
-                            revealBtn.disabled = true;
-                            revealBtn.style.cursor = 'default';
-                            revealBtn.title = 'Email revealed';
-                        } else {
-                            errorEl.textContent = 'Incorrect code. Please try again.';
-                            display.textContent = this.generateCaptcha();
-                            input.value = '';
-                            input.focus();
-                        }
-                    };
-                    
-                    revealBtn.addEventListener('click', showCaptcha);
-                    verifyBtn.addEventListener('click', verifyCaptcha);
-                    
-                    input.addEventListener('keypress', (e) => {
-                        if (e.key === 'Enter') {
-                            verifyCaptcha();
-                        }
-                    });
-                    
-                    cancelBtn.addEventListener('click', hideCaptcha);
-                    
-                    refreshBtn.addEventListener('click', () => {
-                        refreshBtn.classList.add('spinning');
-                        setTimeout(() => {
-                            refreshBtn.classList.remove('spinning');
-                        }, 500);
-                        display.textContent = this.generateCaptcha();
-                        input.value = '';
-                        input.focus();
-                    });
-                    
-                    modal.addEventListener('click', (e) => {
-                        if (e.target === modal) {
-                            hideCaptcha();
-                        }
-                    });
-                    
-                    document.addEventListener('keydown', (e) => {
-                        if (e.key === 'Escape' && modal.classList.contains('active')) {
-                            hideCaptcha();
-                        }
-                    });
-                }
-            };
-            
-            EmailProtection.init();
+            scrollTicking = false;
         }
+        window.addEventListener('scroll', () => { if (!scrollTicking) { requestAnimationFrame(updateOnScroll); scrollTicking = true; } }, { passive: true });
+        updateOnScroll();
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
 
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initializeApp);
-        } else {
-            initializeApp();
+        document.querySelectorAll('.filter-btn').forEach(button => button.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(item => { item.classList.remove('active'); item.setAttribute('aria-pressed', 'false'); });
+            button.classList.add('active'); button.setAttribute('aria-pressed', 'true');
+            const filter = button.dataset.filter;
+            document.querySelectorAll('.publication-item').forEach(item => item.classList.toggle('hidden', filter !== 'all' && item.dataset.category !== filter));
+        }));
+
+        const revealElements = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window && !reduceMotion) {
+            const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+            }), { threshold: .08, rootMargin: '0px 0px -30px' });
+            revealElements.forEach(element => observer.observe(element));
+        } else { revealElements.forEach(element => element.classList.add('is-visible')); }
+
+        function animateNumber(element, end) {
+            if (!element || !Number.isFinite(end)) return;
+            if (reduceMotion) { element.textContent = end.toLocaleString(); return; }
+            const startTime = performance.now(), duration = 900;
+            function frame(now) {
+                const progress = Math.min((now - startTime) / duration, 1);
+                element.textContent = Math.floor(end * (1 - Math.pow(1 - progress, 3))).toLocaleString();
+                if (progress < 1) requestAnimationFrame(frame);
+            }
+            requestAnimationFrame(frame);
         }
+        function updateStats(data) {
+            animateNumber(document.getElementById('stat-publications'), data.publications);
+            animateNumber(document.getElementById('stat-citations'), data.citations);
+            animateNumber(document.getElementById('stat-reads'), data.reads);
+            const total = document.getElementById('total-publications');
+            if (total) total.textContent = data.publications.toLocaleString();
+            const status = document.getElementById('data-status');
+            if (data.isFallback) status.innerHTML = '<i class="fas fa-database" aria-hidden="true"></i><span>ResearchGate metrics · cached overview</span>';
+            else if (data.fromCache) status.innerHTML = '<i class="fas fa-check-circle" aria-hidden="true"></i><span>ResearchGate metrics · updated ' + new Date(data.lastUpdated).toLocaleDateString() + ' · <a href="#" id="refresh-data">Refresh</a></span>';
+            else status.innerHTML = '<i class="fas fa-check-circle" aria-hidden="true"></i><span>ResearchGate metrics · updated just now</span>';
+            const refresh = document.getElementById('refresh-data');
+            if (refresh) refresh.addEventListener('click', async event => {
+                event.preventDefault(); status.innerHTML = '<i class="fas fa-rotate fa-spin" aria-hidden="true"></i><span>Refreshing ResearchGate metrics…</span>';
+                updateStats(await ResearchGateDataFetcher.fetchData(true));
+            });
+        }
+        ResearchGateDataFetcher.fetchData().then(updateStats).catch(() => updateStats({ ...CONFIG.fallbackData, isFallback: true }));
+
+        const EmailProtection = {
+            realEmail: 'whsopt@163.com', currentCaptcha: '',
+            init() {
+                const modal = document.getElementById('captcha-modal'), display = document.getElementById('captcha-display'), input = document.getElementById('captcha-input');
+                const revealBtn = document.getElementById('reveal-email-btn'), verifyBtn = document.getElementById('captcha-verify'), cancelBtn = document.getElementById('captcha-cancel');
+                const refreshBtn = document.getElementById('captcha-refresh'), errorEl = document.getElementById('captcha-error'), emailDisplay = document.getElementById('email-display');
+                const generate = () => {
+                    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; this.currentCaptcha = '';
+                    for (let i = 0; i < 5; i++) this.currentCaptcha += chars.charAt(Math.floor(Math.random() * chars.length));
+                    display.textContent = this.currentCaptcha;
+                };
+                const show = () => { generate(); modal.classList.add('active'); modal.setAttribute('aria-hidden', 'false'); document.body.classList.add('modal-open'); input.value = ''; errorEl.textContent = ''; setTimeout(() => input.focus(), 30); };
+                const hide = () => { modal.classList.remove('active'); modal.setAttribute('aria-hidden', 'true'); document.body.classList.remove('modal-open'); revealBtn.focus(); };
+                const verify = () => {
+                    if (input.value.toUpperCase().trim() === this.currentCaptcha) {
+                        hide(); emailDisplay.textContent = this.realEmail; emailDisplay.classList.add('email-revealed');
+                        revealBtn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>'; revealBtn.disabled = true; revealBtn.title = 'Email revealed';
+                    } else { errorEl.textContent = 'Incorrect code. Please try again.'; generate(); input.value = ''; input.focus(); }
+                };
+                revealBtn.addEventListener('click', show); verifyBtn.addEventListener('click', verify); cancelBtn.addEventListener('click', hide);
+                input.addEventListener('keydown', event => { if (event.key === 'Enter') verify(); });
+                refreshBtn.addEventListener('click', () => { refreshBtn.classList.add('spinning'); setTimeout(() => refreshBtn.classList.remove('spinning'), 500); generate(); input.value = ''; input.focus(); });
+                modal.addEventListener('click', event => { if (event.target === modal) hide(); });
+                document.addEventListener('keydown', event => {
+                    if (event.key === 'Escape') { if (modal.classList.contains('active')) hide(); else closeMenu(); }
+                    if (event.key === 'Tab' && modal.classList.contains('active')) {
+                        const focusable = [...modal.querySelectorAll('button, input')], first = focusable[0], last = focusable[focusable.length - 1];
+                        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+                        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+                    }
+                });
+            }
+        };
+        EmailProtection.init();
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     })();
     </script>
 </body>
